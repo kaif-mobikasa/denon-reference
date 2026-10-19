@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" width="100%" height="100%">
+  <defs>
+    <radialGradient id="goldCone10" cx="45%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#f5e2b8"/>
+      <stop offset="35%" stop-color="#dfbe86"/>
+      <stop offset="70%" stop-color="#b69152"/>
+      <stop offset="100%" stop-color="#7a5c2d"/>
+    </radialGradient>
+    <radialGradient id="centerCap10" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#e8cca0"/>
+      <stop offset="50%" stop-color="#ba965c"/>
+      <stop offset="100%" stop-color="#805f2b"/>
+    </radialGradient>
+    <linearGradient id="cabGrad10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#24262b"/>
+      <stop offset="40%" stop-color="#181a1f"/>
+      <stop offset="100%" stop-color="#0c0d10"/>
+    </linearGradient>
+    <linearGradient id="portGrad10" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#07080a"/>
+      <stop offset="70%" stop-color="#14161a"/>
+      <stop offset="100%" stop-color="#22252a"/>
+    </linearGradient>
+    <filter id="subShadow10" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Ground Ambient Shadow -->
+  <ellipse cx="200" cy="336" rx="145" ry="14" fill="#000000" opacity="0.14"/>
+
+  <!-- Subwoofer Main Cabinet Perspective Group -->
+  <g filter="url(#subShadow10)">
+    <!-- Cabinet Feet -->
+    <rect x="74" y="318" width="18" height="12" rx="4" fill="#1c1e22"/>
+    <rect x="308" y="318" width="18" height="12" rx="4" fill="#1c1e22"/>
+
+    <!-- Cabinet Body -->
+    <rect x="65" y="30" width="270" height="294" rx="14" fill="url(#cabGrad10)"/>
+    <rect x="66" y="31" width="268" height="292" rx="13" fill="none" stroke="#383c44" stroke-width="1.2"/>
+
+    <!-- Baffle Chamfer Inner Border -->
+    <rect x="76" y="40" width="248" height="274" rx="10" fill="#131418" stroke="#22242a" stroke-width="1"/>
+
+    <!-- Corner Grille Grommets -->
+    <circle cx="88" cy="52" r="4.5" fill="#090a0d" stroke="#2b2e36" stroke-width="1"/>
+    <circle cx="312" cy="52" r="4.5" fill="#090a0d" stroke="#2b2e36" stroke-width="1"/>
+    <circle cx="88" cy="302" r="4.5" fill="#090a0d" stroke="#2b2e36" stroke-width="1"/>
+    <circle cx="312" cy="302" r="4.5" fill="#090a0d" stroke="#2b2e36" stroke-width="1"/>
+
+    <!-- 10-Inch Woofer Outer Surround -->
+    <circle cx="200" cy="144" r="92" fill="#181a1f" stroke="#333740" stroke-width="2.5"/>
+    <!-- Outer Rubber Roll -->
+    <circle cx="200" cy="144" r="85" fill="#0e0f12" stroke="#22252a" stroke-width="4"/>
+
+    <!-- Metallic Gold Cone -->
+    <circle cx="200" cy="144" r="76" fill="url(#goldCone10)"/>
+
+    <!-- Subtle Radial Grooves on Cone -->
+    <circle cx="200" cy="144" r="66" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+    <circle cx="200" cy="144" r="54" fill="none" stroke="rgba(0,0,0,0.18)" stroke-width="1.2"/>
+
+    <!-- Inverted Dust Cap with Polk Brand -->
+    <circle cx="200" cy="144" r="38" fill="url(#centerCap10)" stroke="#6d5124" stroke-width="1"/>
+    <text x="200" y="149" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#2b1f0c" text-anchor="middle" letter-spacing="0.04em">polk</text>
+
+    <!-- Dual Front-Firing PowerPort Flares -->
+    <!-- Left Bass Port -->
+    <g transform="translate(130, 266)">
+      <circle cx="0" cy="0" r="24" fill="#08090b" stroke="#272a32" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="19" fill="url(#portGrad10)"/>
+      <circle cx="0" cy="0" r="12" fill="#020304"/>
+    </g>
+
+    <!-- Center Mini Polk Badge -->
+    <text x="200" y="271" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#dfbe86" text-anchor="middle" letter-spacing="0.06em">polk</text>
+
+    <!-- Right Bass Port -->
+    <g transform="translate(270, 266)">
+      <circle cx="0" cy="0" r="24" fill="#08090b" stroke="#272a32" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="19" fill="url(#portGrad10)"/>
+      <circle cx="0" cy="0" r="12" fill="#020304"/>
+    </g>
+  </g>
+</svg>

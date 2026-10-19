@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" width="100%" height="100%">
+  <defs>
+    <radialGradient id="towerGoldCone" cx="42%" cy="42%" r="58%">
+      <stop offset="0%" stop-color="#f8e7c2"/>
+      <stop offset="35%" stop-color="#e1c087"/>
+      <stop offset="70%" stop-color="#b69051"/>
+      <stop offset="100%" stop-color="#705123"/>
+    </radialGradient>
+    <radialGradient id="tweeterDome" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#f3dca6"/>
+      <stop offset="60%" stop-color="#9a7238"/>
+      <stop offset="100%" stop-color="#3d2a0f"/>
+    </radialGradient>
+    <linearGradient id="towerCabGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#141518"/>
+      <stop offset="40%" stop-color="#23262d"/>
+      <stop offset="80%" stop-color="#1a1c22"/>
+      <stop offset="100%" stop-color="#0e0f12"/>
+    </linearGradient>
+    <filter id="towerShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Ground Ambient Shadow -->
+  <ellipse cx="200" cy="346" rx="90" ry="10" fill="#000000" opacity="0.16"/>
+
+  <g filter="url(#towerShadow)">
+    <!-- Heavy Duty Outrigger Stabilizer Feet -->
+    <path d="M 144 326 L 132 344 L 148 344 L 156 326 Z" fill="#181a1f"/>
+    <path d="M 256 326 L 268 344 L 252 344 L 244 326 Z" fill="#181a1f"/>
+    <rect x="146" y="322" width="108" height="12" rx="3" fill="#121317" stroke="#2a2d36" stroke-width="1"/>
+
+    <!-- Main Slender Tower Cabinet -->
+    <rect x="154" y="16" width="92" height="310" rx="8" fill="url(#towerCabGrad)"/>
+    <rect x="155" y="17" width="90" height="308" rx="7" fill="none" stroke="#363a43" stroke-width="1"/>
+
+    <!-- Front Baffle Chamfer -->
+    <rect x="158" y="20" width="84" height="298" rx="6" fill="#111216"/>
+
+    <!-- Top Terylene Dome Tweeter in Waveguide -->
+    <circle cx="200" cy="46" r="14" fill="#0a0a0d" stroke="#252830" stroke-width="1.5"/>
+    <circle cx="200" cy="46" r="7" fill="url(#tweeterDome)"/>
+
+    <!-- Midrange Driver 1 (Gold Cone) -->
+    <g transform="translate(200, 92)">
+      <circle cx="0" cy="0" r="23" fill="#17191e" stroke="#2e323b" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="20" fill="#0c0d10" stroke="#1d2026" stroke-width="2"/>
+      <circle cx="0" cy="0" r="17" fill="url(#towerGoldCone)"/>
+      <circle cx="0" cy="0" r="7" fill="#6c4d1d"/>
+    </g>
+
+    <!-- Midrange Driver 2 (Gold Cone) -->
+    <g transform="translate(200, 146)">
+      <circle cx="0" cy="0" r="23" fill="#17191e" stroke="#2e323b" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="20" fill="#0c0d10" stroke="#1d2026" stroke-width="2"/>
+      <circle cx="0" cy="0" r="17" fill="url(#towerGoldCone)"/>
+      <circle cx="0" cy="0" r="7" fill="#6c4d1d"/>
+    </g>
+
+    <!-- Woofer Driver 3 (Gold Cone) -->
+    <g transform="translate(200, 200)">
+      <circle cx="0" cy="0" r="23" fill="#17191e" stroke="#2e323b" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="20" fill="#0c0d10" stroke="#1d2026" stroke-width="2"/>
+      <circle cx="0" cy="0" r="17" fill="url(#towerGoldCone)"/>
+      <circle cx="0" cy="0" r="7" fill="#6c4d1d"/>
+    </g>
+
+    <!-- Polk Lower Badge -->
+    <text x="200" y="246" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="800" fill="#dfbe86" text-anchor="middle" letter-spacing="0.06em">polk</text>
+
+    <!-- Lower PowerPort Bass Vent Base -->
+    <rect x="168" y="296" width="64" height="8" rx="2" fill="#050608"/>
+  </g>
+</svg>

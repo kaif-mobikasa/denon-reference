@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="barGrille" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2c2f37"/>
+      <stop offset="30%" stop-color="#1a1c22"/>
+      <stop offset="80%" stop-color="#121317"/>
+      <stop offset="100%" stop-color="#0a0b0e"/>
+    </linearGradient>
+    <linearGradient id="standGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#121316"/>
+      <stop offset="40%" stop-color="#2a2d36"/>
+      <stop offset="80%" stop-color="#1f2127"/>
+      <stop offset="100%" stop-color="#0e0f12"/>
+    </linearGradient>
+    <filter id="centerShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Ground Ambient Shadow -->
+  <ellipse cx="200" cy="342" rx="130" ry="12" fill="#000000" opacity="0.14"/>
+
+  <g filter="url(#centerShadow)">
+    <!-- Stand Base Plate -->
+    <rect x="135" y="324" width="130" height="12" rx="4" fill="#181a20" stroke="#32353e" stroke-width="1"/>
+
+    <!-- Stand Vertical Pillars -->
+    <rect x="175" y="145" width="22" height="182" fill="url(#standGrad)"/>
+    <rect x="203" y="145" width="22" height="182" fill="url(#standGrad)"/>
+
+    <!-- Top Stand Mounting Plate -->
+    <rect x="160" y="142" width="80" height="8" rx="2" fill="#15171c"/>
+
+    <!-- Horizontal Center Channel Speaker Bar Body -->
+    <rect x="25" y="92" width="350" height="62" rx="12" fill="url(#barGrille)"/>
+    <rect x="26" y="93" width="348" height="60" rx="11" fill="none" stroke="#3b3f4a" stroke-width="1.2"/>
+
+    <!-- Rounded Outer Bezel Rim -->
+    <rect x="30" y="97" width="340" height="52" rx="8" fill="#16181e" stroke="#252830" stroke-width="1"/>
+
+    <!-- Acoustic Fabric Mesh Texture Lines -->
+    <line x1="36" y1="123" x2="364" y2="123" stroke="rgba(255,255,255,0.04)" stroke-width="48"/>
+
+    <!-- Center Polk Silver Metal Badge -->
+    <rect x="187" y="117" width="26" height="12" rx="2.5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+    <text x="200" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="800" fill="#0f172a" text-anchor="middle" letter-spacing="0.04em">polk</text>
+  </g>
+</svg>

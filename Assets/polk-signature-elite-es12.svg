@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" width="100%" height="100%">
+  <defs>
+    <radialGradient id="goldCone12" cx="42%" cy="42%" r="58%">
+      <stop offset="0%" stop-color="#f8e7c2"/>
+      <stop offset="30%" stop-color="#e3c38b"/>
+      <stop offset="68%" stop-color="#b99354"/>
+      <stop offset="100%" stop-color="#735425"/>
+    </radialGradient>
+    <radialGradient id="centerCap12" cx="38%" cy="38%" r="62%">
+      <stop offset="0%" stop-color="#ebd1a7"/>
+      <stop offset="48%" stop-color="#be9a5f"/>
+      <stop offset="100%" stop-color="#775725"/>
+    </radialGradient>
+    <linearGradient id="cabGrad12" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#282a30"/>
+      <stop offset="40%" stop-color="#191b20"/>
+      <stop offset="100%" stop-color="#0a0b0e"/>
+    </linearGradient>
+    <linearGradient id="sculptPort" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#090a0d"/>
+      <stop offset="60%" stop-color="#16181e"/>
+      <stop offset="100%" stop-color="#262932"/>
+    </linearGradient>
+    <filter id="subShadow12" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Ground Ambient Shadow -->
+  <ellipse cx="200" cy="338" rx="155" ry="14" fill="#000000" opacity="0.14"/>
+
+  <!-- Subwoofer Main Cabinet Perspective Group -->
+  <g filter="url(#subShadow12)">
+    <!-- Heavy Duty Rubber Isolation Feet -->
+    <rect x="68" y="320" width="22" height="12" rx="4" fill="#17181c"/>
+    <rect x="310" y="320" width="22" height="12" rx="4" fill="#17181c"/>
+
+    <!-- Cabinet Body (12" slightly broader & muscular) -->
+    <rect x="58" y="24" width="284" height="302" rx="16" fill="url(#cabGrad12)"/>
+    <rect x="59" y="25" width="282" height="300" rx="15" fill="none" stroke="#3d414a" stroke-width="1.2"/>
+
+    <!-- Inner Recessed Baffle -->
+    <rect x="70" y="36" width="260" height="278" rx="12" fill="#111216" stroke="#22252c" stroke-width="1"/>
+
+    <!-- Grille Magnet Points -->
+    <circle cx="82" cy="48" r="4.5" fill="#08090b" stroke="#2c2f38" stroke-width="1"/>
+    <circle cx="318" cy="48" r="4.5" fill="#08090b" stroke="#2c2f38" stroke-width="1"/>
+    <circle cx="82" cy="302" r="4.5" fill="#08090b" stroke="#2c2f38" stroke-width="1"/>
+    <circle cx="318" cy="302" r="4.5" fill="#08090b" stroke="#2c2f38" stroke-width="1"/>
+
+    <!-- 12-Inch Subwoofer Massive Driver Basket -->
+    <circle cx="200" cy="140" r="102" fill="#191b21" stroke="#393e49" stroke-width="2.8"/>
+    <!-- Santoprene High-Excursion Roll -->
+    <circle cx="200" cy="140" r="94" fill="#0d0e11" stroke="#23262e" stroke-width="4.5"/>
+
+    <!-- Champagne Metallic 12" Polypropylene Cone -->
+    <circle cx="200" cy="140" r="84" fill="url(#goldCone12)"/>
+    <circle cx="200" cy="140" r="74" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+    <circle cx="200" cy="140" r="60" fill="none" stroke="rgba(0,0,0,0.18)" stroke-width="1.2"/>
+
+    <!-- Oversized Center Dustcap -->
+    <circle cx="200" cy="140" r="42" fill="url(#centerCap12)" stroke="#674b20" stroke-width="1"/>
+    <text x="200" y="146" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800" fill="#251a09" text-anchor="middle" letter-spacing="0.04em">polk</text>
+
+    <!-- Sculpted Dual Aerodynamic Bass Reflex Port Sculptures -->
+    <path d="M 94 270 C 94 250 114 246 136 246 C 158 246 178 250 178 270 C 178 286 158 290 136 290 C 114 290 94 286 94 270 Z" fill="url(#sculptPort)" stroke="#2a2e37" stroke-width="2"/>
+    <ellipse cx="136" cy="270" rx="20" ry="14" fill="#020304"/>
+
+    <!-- Center Polk Accent Badge -->
+    <text x="200" y="274" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#e3c38b" text-anchor="middle" letter-spacing="0.06em">polk</text>
+
+    <!-- Right Port -->
+    <path d="M 222 270 C 222 250 242 246 264 246 C 286 246 306 250 306 270 C 306 286 286 290 264 290 C 242 290 222 286 222 270 Z" fill="url(#sculptPort)" stroke="#2a2e37" stroke-width="2"/>
+    <ellipse cx="264" cy="270" rx="20" ry="14" fill="#020304"/>
+  </g>
+</svg>
