@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
 
 /* --- Custom Properties / Design Tokens --- */
 :root {
@@ -26,7 +26,9 @@
   --accent-green: #2ed573;
 
   /* Typography */
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans:
+    "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
   --text-main: #ffffff;
   --text-muted: #9aa5b6;
   --text-dim: #5f6c82;
@@ -49,12 +51,15 @@
   --radius-lg: 18px;
   --radius-pill: 9999px;
 
-  --shadow-dropdown: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 1px rgba(255, 255, 255, 0.15);
+  --shadow-dropdown:
+    0 24px 60px rgba(0, 0, 0, 0.8), 0 0 1px rgba(255, 255, 255, 0.15);
   --shadow-glow: 0 0 30px rgba(212, 175, 55, 0.18);
 }
 
 /* Reset & Box Sizing */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -144,7 +149,9 @@ button {
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: color var(--trans-fast), transform var(--trans-fast);
+  transition:
+    color var(--trans-fast),
+    transform var(--trans-fast);
   flex-shrink: 0;
 }
 
@@ -173,7 +180,9 @@ button {
   opacity: 0;
   transform: translateY(8px);
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   white-space: nowrap;
   font-size: 0.8125rem;
   letter-spacing: 0.01em;
@@ -337,7 +346,9 @@ button {
   padding: 0;
   cursor: pointer;
   flex-shrink: 0;
-  transition: opacity var(--trans-fast), transform var(--trans-fast);
+  transition:
+    opacity var(--trans-fast),
+    transform var(--trans-fast);
 }
 
 .icon-trigger-btn:hover {
@@ -407,7 +418,10 @@ button {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
-  transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s ease;
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.22s ease;
   pointer-events: none;
   z-index: 1005;
 }
@@ -888,7 +902,10 @@ button {
   transform: translateX(100%);
   visibility: hidden;
   pointer-events: none;
-  transition: transform var(--trans-smooth), visibility var(--trans-smooth), box-shadow var(--trans-smooth);
+  transition:
+    transform var(--trans-smooth),
+    visibility var(--trans-smooth),
+    box-shadow var(--trans-smooth);
 }
 
 .cart-drawer-panel.open {
@@ -1098,7 +1115,10 @@ button {
   transform: translateX(-100%);
   visibility: hidden;
   pointer-events: none;
-  transition: transform var(--trans-smooth), visibility var(--trans-smooth), box-shadow var(--trans-smooth);
+  transition:
+    transform var(--trans-smooth),
+    visibility var(--trans-smooth),
+    box-shadow var(--trans-smooth);
   overflow-y: auto;
 }
 
@@ -1217,8 +1237,14 @@ button {
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  background: 
-    linear-gradient(90deg, rgba(6, 8, 13, 0.85) 0%, rgba(6, 8, 13, 0.6) 38%, rgba(6, 8, 13, 0.15) 68%, transparent 100%),
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 8, 13, 0.85) 0%,
+      rgba(6, 8, 13, 0.6) 38%,
+      rgba(6, 8, 13, 0.15) 68%,
+      transparent 100%
+    ),
     linear-gradient(0deg, rgba(6, 8, 13, 0.75) 0%, transparent 18%);
 }
 
@@ -1315,14 +1341,18 @@ button {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  box-shadow: 0 6px 24px rgba(235, 60, 40, 0.45), 0 2px 8px rgba(0, 0, 0, 0.4);
+  box-shadow:
+    0 6px 24px rgba(235, 60, 40, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.4);
   transition: all var(--trans-fast);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .btn-hero-primary:hover {
   background: linear-gradient(135deg, #ff6654 0%, #ea4330 100%);
-  box-shadow: 0 8px 32px rgba(235, 60, 40, 0.65), 0 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    0 8px 32px rgba(235, 60, 40, 0.65),
+    0 2px 10px rgba(0, 0, 0, 0.5);
   transform: translateY(-2px);
   color: #ffffff;
 }
@@ -1379,7 +1409,7 @@ button {
 /* ==========================================================================
    7. RESPONSIVE BREAKPOINTS (HEADER & HERO)
    ========================================================================== */
-@media (max-width: 1180px) {
+@media (max-width: 1200px) {
   .nav-links-menu {
     display: none;
   }
@@ -1403,7 +1433,7 @@ button {
     padding: 0 16px;
     gap: 12px;
   }
-  
+
   /* Text utility links move into mobile drawer on tablet/mobile */
   .nav-text-link {
     display: none;
@@ -1438,13 +1468,13 @@ button {
 
   /* Transparent-to-dark gradient so image, receiver & bokeh are clearly visible */
   .hero-overlay-scrim {
-    background: 
-      linear-gradient(180deg, 
-        rgba(6, 8, 13, 0.15) 0%, 
-        rgba(6, 8, 13, 0.25) 35%, 
-        rgba(6, 8, 13, 0.75) 65%, 
-        rgba(6, 8, 13, 0.95) 100%
-      );
+    background: linear-gradient(
+      180deg,
+      rgba(6, 8, 13, 0.15) 0%,
+      rgba(6, 8, 13, 0.25) 35%,
+      rgba(6, 8, 13, 0.75) 65%,
+      rgba(6, 8, 13, 0.95) 100%
+    );
   }
 
   .hero-banner-container {
@@ -1692,15 +1722,35 @@ button {
   background: #ea4a36;
 }
 
-.acoustic-wave-bars span:nth-child(1) { height: 8px; animation: soundWave 1.2s infinite ease-in-out; }
-.acoustic-wave-bars span:nth-child(2) { height: 16px; animation: soundWave 0.9s infinite ease-in-out 0.2s; }
-.acoustic-wave-bars span:nth-child(3) { height: 22px; animation: soundWave 1.4s infinite ease-in-out 0.4s; }
-.acoustic-wave-bars span:nth-child(4) { height: 14px; animation: soundWave 1s infinite ease-in-out 0.1s; }
-.acoustic-wave-bars span:nth-child(5) { height: 10px; animation: soundWave 1.3s infinite ease-in-out 0.3s; }
+.acoustic-wave-bars span:nth-child(1) {
+  height: 8px;
+  animation: soundWave 1.2s infinite ease-in-out;
+}
+.acoustic-wave-bars span:nth-child(2) {
+  height: 16px;
+  animation: soundWave 0.9s infinite ease-in-out 0.2s;
+}
+.acoustic-wave-bars span:nth-child(3) {
+  height: 22px;
+  animation: soundWave 1.4s infinite ease-in-out 0.4s;
+}
+.acoustic-wave-bars span:nth-child(4) {
+  height: 14px;
+  animation: soundWave 1s infinite ease-in-out 0.1s;
+}
+.acoustic-wave-bars span:nth-child(5) {
+  height: 10px;
+  animation: soundWave 1.3s infinite ease-in-out 0.3s;
+}
 
 @keyframes soundWave {
-  0%, 100% { transform: scaleY(0.4); }
-  50% { transform: scaleY(1); }
+  0%,
+  100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1);
+  }
 }
 
 .trust-meta-text {
@@ -1744,7 +1794,9 @@ button {
 
 .guarantee-pillar-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.1), 0 0 0 1px rgba(234, 74, 54, 0.3);
+  box-shadow:
+    0 16px 36px -10px rgba(15, 23, 42, 0.1),
+    0 0 0 1px rgba(234, 74, 54, 0.3);
   border-color: rgba(234, 74, 54, 0.35);
 }
 
@@ -1759,7 +1811,11 @@ button {
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(234, 74, 54, 0.12) 0%, rgba(220, 55, 36, 0.04) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(234, 74, 54, 0.12) 0%,
+    rgba(220, 55, 36, 0.04) 100%
+  );
   border: 1px solid rgba(234, 74, 54, 0.2);
   display: flex;
   align-items: center;
@@ -1901,21 +1957,27 @@ button {
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.05),
+    0 1px 3px rgba(15, 23, 42, 0.03);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
 }
 
 .speaker-product-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 28px 60px -15px rgba(15, 23, 42, 0.15), 0 0 0 1px rgba(234, 74, 54, 0.25);
+  box-shadow:
+    0 28px 60px -15px rgba(15, 23, 42, 0.15),
+    0 0 0 1px rgba(234, 74, 54, 0.25);
   border-color: rgba(234, 74, 54, 0.3);
 }
 
 /* Featured Centerpiece Card Accent */
 .speaker-card-featured {
   border-color: rgba(234, 74, 54, 0.4);
-  box-shadow: 0 16px 40px -10px rgba(234, 74, 54, 0.15), 0 1px 3px rgba(15, 23, 42, 0.04);
+  box-shadow:
+    0 16px 40px -10px rgba(234, 74, 54, 0.15),
+    0 1px 3px rgba(15, 23, 42, 0.04);
 }
 
 .card-featured-badge {
@@ -2866,7 +2928,9 @@ button {
   border: 1px solid #e5e7eb;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.04),
+    0 1px 3px rgba(15, 23, 42, 0.02);
   transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1);
   height: 100%;
   box-sizing: border-box;
@@ -2875,7 +2939,9 @@ button {
 
 .bestseller-product-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 24px 50px -10px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(234, 74, 54, 0.3);
+  box-shadow:
+    0 24px 50px -10px rgba(15, 23, 42, 0.12),
+    0 0 0 1px rgba(234, 74, 54, 0.3);
   border-color: rgba(234, 74, 54, 0.35);
 }
 
@@ -3310,7 +3376,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .btn-austere-action:hover {
@@ -3513,7 +3581,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .btn-vinyl-outline:hover {
@@ -3681,7 +3751,9 @@ button {
   text-stroke: 1.5px rgba(255, 255, 255, 0.45);
   display: inline-block;
   transform: translateY(-2px);
-  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), -webkit-text-stroke-color 0.35s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    -webkit-text-stroke-color 0.35s ease;
 }
 
 .brand-duo-lockup:hover .duo-ampersand {
@@ -3729,12 +3801,16 @@ button {
   overflow: hidden;
   background-color: #0b0b0b;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85);
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.4s ease;
 }
 
 .capsule-portal:hover {
   transform: translateY(-6px);
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.95), 0 0 24px rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 28px 60px rgba(0, 0, 0, 0.95),
+    0 0 24px rgba(255, 255, 255, 0.05);
 }
 
 .portal-side {
@@ -3917,7 +3993,10 @@ button {
   justify-content: center;
   padding: 8px 4px;
   border-radius: 50%;
-  transition: transform 0.25s ease, opacity 0.25s ease, color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    color 0.25s ease;
   z-index: 10;
   outline: none;
 }
@@ -3957,7 +4036,9 @@ button {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.035);
   border: 1px solid rgba(0, 0, 0, 0.04);
   box-sizing: border-box;
-  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s ease;
 }
 
 .polk-product-card:hover {
@@ -4044,7 +4125,9 @@ button {
   background: #ea4a36 !important;
   border-radius: 9999px !important;
   height: 100% !important;
-  transition: transform 0.2s ease, width 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    width 0.2s ease;
 }
 
 /* Responsive Breakpoints */
@@ -4365,7 +4448,9 @@ button {
   color: #94a3b8;
   font-size: 0.875rem;
   text-decoration: none;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
   display: inline-block;
 }
 
@@ -4405,7 +4490,9 @@ button {
   overflow: hidden;
   max-width: 440px;
   background: rgba(0, 0, 0, 0.22);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .footer-input-group:focus-within {
@@ -4440,7 +4527,9 @@ button {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .footer-submit-btn:hover {
@@ -4485,7 +4574,9 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .footer-social-link:hover {
@@ -4586,7 +4677,10 @@ button {
   display: inline-flex;
   align-items: center;
   opacity: 0.85;
-  transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease;
   user-select: none;
 }
 
@@ -4695,7 +4789,9 @@ button {
     display: flex;
     align-items: center;
     color: #94a3b8;
-    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s ease;
+    transition:
+      transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+      color 0.3s ease;
   }
 
   .footer-accordion-col.is-open .footer-accordion-icon {
@@ -4707,7 +4803,9 @@ button {
   .footer-accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), padding 0.3s ease;
+    transition:
+      max-height 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+      padding 0.3s ease;
   }
 
   .footer-accordion-col.is-open .footer-accordion-content {
@@ -4729,8 +4827,7 @@ button {
   .footer-brand-family-row {
     gap: 20px 32px;
   }
-.footer-newsletter-wrap{
- flex: 1 1 160px;
+  .footer-newsletter-wrap {
+    flex: 1 1 160px;
+  }
 }
-}
-
