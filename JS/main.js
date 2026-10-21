@@ -202,159 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- 7. HEOS Video Audio Mute Toggle ---
-  const videoToggleBtn = document.querySelector('.video-mute-toggle-btn');
-  const storyVideo = document.querySelector('.cinema-heos-video, .story-heos-video');
-  if (videoToggleBtn && storyVideo) {
-    videoToggleBtn.addEventListener('click', () => {
-      storyVideo.muted = !storyVideo.muted;
-      const iconMuted = videoToggleBtn.querySelector('.icon-muted');
-      const iconUnmuted = videoToggleBtn.querySelector('.icon-unmuted');
-      if (storyVideo.muted) {
-        if (iconMuted) iconMuted.style.display = 'block';
-        if (iconUnmuted) iconUnmuted.style.display = 'none';
-      } else {
-        if (iconMuted) iconMuted.style.display = 'none';
-        if (iconUnmuted) iconUnmuted.style.display = 'block';
-      }
-    });
-  }
-
-  // --- 8. Interactive Room Selector Chips ---
-  const roomChips = document.querySelectorAll('.room-card-chip');
-  roomChips.forEach((chip) => {
-    chip.addEventListener('click', () => {
-      roomChips.forEach((c) => (c.style.borderColor = '#e2e8f0'));
-      chip.style.borderColor = '#ea4a36';
-    });
-  });
-
-  // --- 9. Swiper Carousel for Best Sellers ---
-  function initBestSellersSwiper() {
-    if (typeof Swiper !== 'undefined') {
-      new Swiper('.bestsellers-swiper', {
-        slidesPerView: 1.15,
-        spaceBetween: 20,
-        grabCursor: true,
-        speed: 650,
-        navigation: {
-          nextEl: '.bestsellers-next',
-          prevEl: '.bestsellers-prev',
-        },
-        pagination: {
-          el: '.bestsellers-swiper-pagination',
-          clickable: true,
-        },
-        scrollbar: {
-          el: '.bestsellers-scrollbar',
-          draggable: true,
-        },
-        breakpoints: {
-          580: {
-            slidesPerView: 1.6,
-            spaceBetween: 24,
-          },
-          768: {
-            slidesPerView: 2.2,
-            spaceBetween: 28,
-          },
-          1024: {
-            slidesPerView: 3.15,
-            spaceBetween: 32,
-          },
-          1360: {
-            slidesPerView: 3.6,
-            spaceBetween: 36,
-          },
-        },
-      });
-    } else {
-      // Offline fallback: smooth scroll container
-      const swiperWrapper = document.querySelector('.bestsellers-swiper .swiper-wrapper');
-      const prevBtn = document.querySelector('.bestsellers-prev');
-      const nextBtn = document.querySelector('.bestsellers-next');
-
-      if (swiperWrapper) {
-        swiperWrapper.style.display = 'flex';
-        swiperWrapper.style.overflowX = 'auto';
-        swiperWrapper.style.scrollBehavior = 'smooth';
-        swiperWrapper.style.gap = '24px';
-        document.querySelectorAll('.bestsellers-swiper .swiper-slide').forEach((slide) => {
-          slide.style.minWidth = '320px';
-          slide.style.flexShrink = '0';
-        });
-
-        prevBtn?.addEventListener('click', () => {
-          swiperWrapper.scrollBy({ left: -340, behavior: 'smooth' });
-        });
-        nextBtn?.addEventListener('click', () => {
-          swiperWrapper.scrollBy({ left: 340, behavior: 'smooth' });
-        });
-      }
-    }
-  }
-
-  // --- 10. Swiper Carousel for Our Favorite Polk Products ---
-  function initPolkFavoritesSwiper() {
-    if (typeof Swiper !== 'undefined') {
-      new Swiper('.polk-favorites-swiper', {
-        slidesPerView: 1.15,
-        spaceBetween: 16,
-        grabCursor: true,
-        speed: 550,
-        navigation: {
-          nextEl: '#polkNextBtn',
-          prevEl: '#polkPrevBtn',
-        },
-        scrollbar: {
-          el: '.polk-favorites-scrollbar',
-          draggable: true,
-          hide: false,
-        },
-        breakpoints: {
-          540: {
-            slidesPerView: 1.8,
-            spaceBetween: 18,
-          },
-          768: {
-            slidesPerView: 2.3,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 3.2,
-            spaceBetween: 24,
-          },
-          1280: {
-            slidesPerView: 4,
-            spaceBetween: 24,
-          },
-        },
-      });
-    } else {
-      // Offline fallback: smooth scroll container
-      const polkWrapper = document.querySelector('.polk-favorites-swiper .swiper-wrapper');
-      const prevBtn = document.getElementById('polkPrevBtn');
-      const nextBtn = document.getElementById('polkNextBtn');
-
-      if (polkWrapper) {
-        polkWrapper.style.display = 'flex';
-        polkWrapper.style.overflowX = 'auto';
-        polkWrapper.style.scrollBehavior = 'smooth';
-        polkWrapper.style.gap = '20px';
-        document.querySelectorAll('.polk-favorites-swiper .swiper-slide').forEach((slide) => {
-          slide.style.minWidth = '280px';
-          slide.style.flexShrink = '0';
-        });
-
-        prevBtn?.addEventListener('click', () => {
-          polkWrapper.scrollBy({ left: -300, behavior: 'smooth' });
-        });
-        nextBtn?.addEventListener('click', () => {
-          polkWrapper.scrollBy({ left: 300, behavior: 'smooth' });
-        });
-      }
-    }
-  }
 
   // --- 11. Footer Mobile Accordions ---
   const footerAccordionCols = document.querySelectorAll('.footer-accordion-col');
@@ -385,6 +232,224 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  initBestSellersSwiper();
-  initPolkFavoritesSwiper();
+  // --- 12. Hero Advanced Search Handler ---
+  const heroSearchForm = document.querySelector('.advanced-search-form');
+  if (heroSearchForm) {
+    heroSearchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const targetSection = document.getElementById('accessories') || document.getElementById('speaker-showcase');
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // --- 13. Breville Parts Carousel Navigation ---
+  const partsTrack = document.querySelector('.parts-carousel-track');
+  const partsPrevBtn = document.querySelector('.parts-nav-prev');
+  const partsNextBtn = document.querySelector('.parts-nav-next');
+
+  if (partsTrack && partsPrevBtn && partsNextBtn) {
+    partsPrevBtn.addEventListener('click', () => {
+      const cardWidth = partsTrack.querySelector('.parts-category-card')?.offsetWidth || 280;
+      partsTrack.scrollBy({ left: -(cardWidth + 20), behavior: 'smooth' });
+    });
+
+    partsNextBtn.addEventListener('click', () => {
+      const cardWidth = partsTrack.querySelector('.parts-category-card')?.offsetWidth || 280;
+      partsTrack.scrollBy({ left: cardWidth + 20, behavior: 'smooth' });
+    });
+  }
+
+  // --- 14. Best Selling Denon Accessories Swiper Carousel ---
+  let accSwiper = null;
+  function initAccessoriesSwiper() {
+    if (typeof Swiper !== 'undefined' && document.querySelector('.accessories-swiper')) {
+      accSwiper = new Swiper('.accessories-swiper', {
+        slidesPerView: 1.25,
+        spaceBetween: 16,
+        grabCursor: true,
+        speed: 550,
+        navigation: {
+          nextEl: '.acc-nav-next',
+          prevEl: '.acc-nav-prev',
+        },
+        scrollbar: {
+          el: '.accessories-scrollbar',
+          draggable: true,
+        },
+        breakpoints: {
+          540: {
+            slidesPerView: 2.1,
+            spaceBetween: 20,
+          },
+          820: {
+            slidesPerView: 3.1,
+            spaceBetween: 24,
+          },
+          1120: {
+            slidesPerView: 4,
+            spaceBetween: 24,
+          },
+        },
+      });
+    }
+
+    // Interactive Capsule Category Filter Tabs
+    const accPillBtns = document.querySelectorAll('.acc-pill-btn');
+    const accSlides = document.querySelectorAll('.accessories-swiper .swiper-slide');
+
+    if (accPillBtns.length && accSlides.length) {
+      accPillBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const cat = btn.getAttribute('data-category');
+
+          accPillBtns.forEach((b) => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+
+          accSlides.forEach((slide) => {
+            const slideCat = slide.getAttribute('data-category');
+            if (cat === 'all' || slideCat === cat) {
+              slide.style.display = 'flex';
+            } else {
+              slide.style.display = 'none';
+            }
+          });
+
+          if (accSwiper) {
+            accSwiper.update();
+            accSwiper.slideTo(0);
+          }
+        });
+      });
+    }
+  }
+
+  // Banner pills active toggle
+  const shopPills = document.querySelectorAll('.denon-shop-pill');
+  if (shopPills.length) {
+    shopPills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        shopPills.forEach((p) => {
+          p.classList.remove('active');
+          p.setAttribute('aria-selected', 'false');
+        });
+        pill.classList.add('active');
+        pill.setAttribute('aria-selected', 'true');
+      });
+    });
+  }
+
+  // Accessories Quick View & Add to Cart interactive feedback
+  document.querySelectorAll('.btn-add-cart').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const label = btn.querySelector('span');
+      if (label && !btn.classList.contains('added')) {
+        const originalText = label.textContent;
+        label.textContent = 'Added! ✓';
+        btn.classList.add('added');
+        btn.style.background = '#10b981';
+        btn.style.color = '#ffffff';
+        btn.style.borderColor = '#10b981';
+        setTimeout(() => {
+          label.textContent = originalText;
+          btn.classList.remove('added');
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.style.borderColor = '';
+        }, 1500);
+      }
+    });
+  });
+
+  document.querySelectorAll('.btn-quick-view').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = btn.closest('.accessory-card');
+      const title = card?.querySelector('.acc-title')?.getAttribute('title') || 'Accessory';
+      const price = card?.querySelector('.acc-price')?.textContent || '';
+      const label = btn.querySelector('span');
+      if (label) {
+        const originalText = label.textContent;
+        label.textContent = 'Viewing...';
+        setTimeout(() => {
+          label.textContent = originalText;
+        }, 1200);
+      }
+    });
+  });
+
+  // --- 16. Denon FAQ Accordion & Category Filter Controller ---
+  function initDenonFaqAccordion() {
+    const faqItems = document.querySelectorAll('.denon-faq-item');
+    const filterBtns = document.querySelectorAll('.faq-filter-btn');
+
+    // Accordion Toggle
+    faqItems.forEach((item, index) => {
+      const questionBtn = item.querySelector('.denon-faq-question');
+      if (!questionBtn) return;
+
+      questionBtn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('is-open');
+
+        // Close other items when opening a new one
+        if (!isOpen) {
+          faqItems.forEach((other) => {
+            if (other !== item) {
+              other.classList.remove('is-open');
+              other.querySelector('.denon-faq-question')?.setAttribute('aria-expanded', 'false');
+            }
+          });
+        }
+
+        // Toggle clicked item (allows opening and closing any item)
+        if (isOpen) {
+          item.classList.remove('is-open');
+          questionBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('is-open');
+          questionBtn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Category Filter Pills
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach((b) => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const selectedFilter = btn.getAttribute('data-filter') || 'all';
+
+        faqItems.forEach((item, index) => {
+          const itemCat = item.getAttribute('data-category');
+          if (selectedFilter === 'all' || itemCat === selectedFilter) {
+            item.classList.remove('faq-hidden');
+            if (index === 0) {
+              item.classList.add('is-open');
+              item.querySelector('.denon-faq-question')?.setAttribute('aria-expanded', 'true');
+            }
+          } else {
+            item.classList.add('faq-hidden');
+            if (index !== 0) {
+              item.classList.remove('is-open');
+              item.querySelector('.denon-faq-question')?.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+      });
+    });
+  }
+
+  initAccessoriesSwiper();
+  initDenonFaqAccordion();
 });
