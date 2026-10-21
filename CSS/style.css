@@ -1259,35 +1259,10 @@ button {
 }
 
 .hero-content-card {
-  max-width: 580px;
+  max-width: 620px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-/* Eyebrow Pill */
-.hero-eyebrow-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #f1f3f7;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-}
-
-.hero-eyebrow-pill .sparkle-icon {
-  color: var(--accent-gold);
-  font-size: 0.85rem;
 }
 
 /* Headline */
@@ -1322,11 +1297,11 @@ button {
 .hero-cta-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 22px;
-  margin-top: 8px;
+  gap: 18px;
+  margin-top: 4px;
 }
 
-/* Red / Coral Pill Button from Screenshot */
+/* Red / Coral Pill Button */
 .btn-hero-primary {
   display: inline-flex;
   align-items: center;
@@ -1367,43 +1342,139 @@ button {
 }
 
 .btn-hero-primary:hover svg {
-  transform: translateX(4px);
+  transform: scale(1.1);
 }
 
-/* Feature Spec Badges */
-.hero-feature-badges {
+/* ==========================================================================
+   Advanced Search Card (Hero Section)
+   ========================================================================== */
+.hero-advanced-search {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 22px 22px;
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.38),
+    0 2px 8px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 620px;
+  margin-top: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+}
+
+.advanced-search-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #16243b;
+  letter-spacing: -0.015em;
+  margin: 0 0 14px 0;
+  line-height: 1.2;
+}
+
+.advanced-search-form {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
+  width: 100%;
 }
 
-.spec-tag {
+.search-dropdown-group {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.custom-select-wrap {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.search-select {
+  width: 100%;
+  height: 44px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f1f3f6;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0 32px 0 14px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #2c384e;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.search-select:hover {
+  background-color: #e8ecf2;
+  border-color: #cbd5e1;
+}
+
+.search-select:focus {
+  background-color: #ffffff;
+  border-color: #192b4a;
+  box-shadow: 0 0 0 3px rgba(25, 43, 74, 0.12);
+}
+
+.search-select option {
+  background: #ffffff;
+  color: #1a202c;
+  font-weight: 500;
+  padding: 8px;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #4b586e;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.custom-select-wrap:hover .select-arrow {
+  color: #16243b;
+}
+
+.advanced-search-btn {
+  height: 44px;
+  width: 44px;
+  min-width: 44px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: var(--radius-sm);
-  background: rgba(14, 18, 26, 0.65);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--border-subtle);
-  color: #c4d0e0;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  transition: all var(--trans-fast);
+  justify-content: center;
+  background: #192841;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(25, 40, 65, 0.35);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
-.spec-tag:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--border-medium);
-  color: #fff;
-  transform: translateY(-1px);
+.advanced-search-btn:hover {
+  background: #0f1827;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 24, 39, 0.45);
 }
 
-.spec-tag svg {
-  color: var(--accent-gold);
+.advanced-search-btn:active {
+  transform: translateY(0);
+}
+
+.advanced-search-btn .btn-text-mobile {
+  display: none;
 }
 
 /* ==========================================================================
@@ -1486,11 +1557,6 @@ button {
     gap: 16px;
   }
 
-  .hero-eyebrow-pill {
-    font-size: 0.7rem;
-    padding: 5px 12px;
-  }
-
   .hero-headline {
     font-size: clamp(2.1rem, 7vw, 2.7rem);
     line-height: 1.1;
@@ -1507,13 +1573,42 @@ button {
     font-size: 0.8125rem;
   }
 
-  .hero-feature-badges {
-    gap: 6px;
+  /* Responsive Advanced Search */
+  .hero-advanced-search {
+    padding: 16px;
+    border-radius: 10px;
   }
 
-  .spec-tag {
-    font-size: 0.7rem;
-    padding: 5px 10px;
+  .advanced-search-title {
+    font-size: 1.125rem;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .advanced-search-form {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .search-dropdown-group {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .advanced-search-btn {
+    width: 100%;
+    height: 44px;
+    border-radius: 8px;
+    gap: 8px;
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  .advanced-search-btn .btn-text-mobile {
+    display: inline;
   }
 }
 
@@ -1613,6 +1708,303 @@ button {
 }
 
 /* ==========================================================================
+   PARTS BY CATEGORY SHOWCASE SECTION
+   ========================================================================== */
+.parts-category-section {
+  background-color: #f7f9fa;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #e5e9ee;
+}
+
+.parts-category-container {
+  max-width: var(--max-width, 1400px);
+  margin: 0 auto;
+  padding: 0 36px;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+/* Left Intro Column */
+.parts-intro-col {
+  flex: 0 0 280px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.parts-section-title {
+  font-family: inherit;
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.12;
+  color: #3b1b2d;
+  letter-spacing: -0.025em;
+  margin: 0 0 18px 0;
+}
+
+.parts-section-desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #4b5565;
+  margin: 0 0 32px 0;
+}
+
+/* Circular Arrow Navigation Controls */
+.parts-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.parts-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid #3b1b2d;
+  background: transparent;
+  color: #3b1b2d;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.parts-nav-btn:hover {
+  background: #3b1b2d;
+  color: #ffffff;
+  transform: scale(1.06);
+}
+
+.parts-nav-btn:active {
+  transform: scale(0.96);
+}
+
+/* Right Carousel Wrapper & Track */
+.parts-carousel-wrapper {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.parts-carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 4px 18px;
+  scrollbar-width: none;
+}
+
+.parts-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Category Card */
+.parts-category-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-decoration: none;
+  border: 1px solid #e8ecf1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.parts-category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(59, 27, 45, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: #d8e0ea;
+}
+
+/* Full-Width Media Container (Background Removed) */
+.parts-card-media {
+  background: transparent;
+  width: 100%;
+  height: 200px;
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.parts-category-card:hover .parts-card-media {
+  background: transparent;
+}
+
+.parts-card-img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.parts-category-card:hover .parts-card-img {
+  transform: scale(1.05);
+}
+
+/* Card Footer */
+.parts-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  gap: 10px;
+}
+
+.parts-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.parts-card-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.01em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s ease;
+}
+
+.parts-category-card:hover .parts-card-name {
+  color: #3b1b2d;
+}
+
+.parts-card-count {
+  font-size: 0.8125rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Arrow Circle */
+.parts-card-arrow {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  background: #edf1f5;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.parts-category-card:hover .parts-card-arrow {
+  background: #3b1b2d;
+  color: #ffffff;
+  transform: translate(2px, -2px);
+}
+
+/* Responsive Rules for Parts Section */
+@media (max-width: 1024px) {
+  .parts-category-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  .parts-intro-col {
+    max-width: 100%;
+    flex: auto;
+    width: 100%;
+  }
+
+  .parts-section-title br {
+    display: none;
+  }
+
+  .parts-intro-col {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "title nav"
+      "desc nav";
+    gap: 8px 24px;
+    align-items: center;
+  }
+
+  .parts-section-title {
+    grid-area: title;
+    margin: 0;
+  }
+
+  .parts-section-desc {
+    grid-area: desc;
+    margin: 0;
+  }
+
+  .parts-nav-controls {
+    grid-area: nav;
+    align-self: center;
+  }
+
+  .parts-carousel-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .parts-category-section {
+    padding: 50px 0;
+  }
+
+  .parts-category-container {
+    padding: 0 18px;
+    padding-bottom: 40px;
+  }
+
+  .parts-intro-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .parts-section-title {
+    font-size: 1.85rem;
+  }
+
+  .parts-section-desc {
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+  }
+
+  .parts-category-card {
+    flex: 0 0 240px;
+    padding: 0 0 14px 0;
+  }
+
+  .parts-card-media {
+    height: 165px;
+  }
+
+  .parts-card-footer {
+    padding: 0 12px;
+  }
+}
+
+/* ==========================================================================
    8. THE DENON SOUND TRUST DOCK (LIGHT ARCHITECTURAL COMMAND DOCK)
    ========================================================================== */
 .denon-guarantee-section {
@@ -1635,9 +2027,9 @@ button {
 
 .guarantee-layout-dock {
   display: grid;
-  grid-template-columns: 1fr 1.35fr;
+  grid-template-columns: 1fr 2.1fr;
   align-items: center;
-  gap: clamp(40px, 5vw, 80px);
+  gap: clamp(32px, 3.5vw, 60px);
 }
 
 /* Left Brand Column */
@@ -1646,39 +2038,13 @@ button {
   flex-direction: column;
 }
 
-.guarantee-badge-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  background: rgba(234, 74, 54, 0.08);
-  border: 1px solid rgba(234, 74, 54, 0.2);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #ea4a36;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-  width: fit-content;
-}
-
-.guarantee-badge-pill .badge-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #ea4a36;
-  box-shadow: 0 0 8px #ea4a36;
-  animation: pulseDot 2s infinite ease-in-out;
-}
-
 .guarantee-main-title {
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-size: clamp(2.2rem, 3.2vw, 3.2rem);
   font-weight: 800;
-  line-height: 1.14;
+  line-height: 1.15;
   letter-spacing: -0.03em;
   color: #0f172a;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .highlight-coral-gradient {
@@ -1689,100 +2055,25 @@ button {
 }
 
 .guarantee-subtitle {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: #64748b;
   font-weight: 400;
-  line-height: 1.6;
-  margin-bottom: 32px;
+  line-height: 1.5;
+  margin-bottom: 0;
 }
 
-/* Acoustic Trust Indicator & Waveform */
-.trust-audio-badge {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 20px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
-  width: fit-content;
-}
-
-.acoustic-wave-bars {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  height: 22px;
-}
-
-.acoustic-wave-bars span {
-  width: 3px;
-  border-radius: 3px;
-  background: #ea4a36;
-}
-
-.acoustic-wave-bars span:nth-child(1) {
-  height: 8px;
-  animation: soundWave 1.2s infinite ease-in-out;
-}
-.acoustic-wave-bars span:nth-child(2) {
-  height: 16px;
-  animation: soundWave 0.9s infinite ease-in-out 0.2s;
-}
-.acoustic-wave-bars span:nth-child(3) {
-  height: 22px;
-  animation: soundWave 1.4s infinite ease-in-out 0.4s;
-}
-.acoustic-wave-bars span:nth-child(4) {
-  height: 14px;
-  animation: soundWave 1s infinite ease-in-out 0.1s;
-}
-.acoustic-wave-bars span:nth-child(5) {
-  height: 10px;
-  animation: soundWave 1.3s infinite ease-in-out 0.3s;
-}
-
-@keyframes soundWave {
-  0%,
-  100% {
-    transform: scaleY(0.4);
-  }
-  50% {
-    transform: scaleY(1);
-  }
-}
-
-.trust-meta-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.trust-stars {
-  color: #f59e0b;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-}
-
-.trust-score {
-  font-size: 0.8125rem;
-  color: #475569;
-  font-weight: 600;
-}
-
-/* Right: 4-Pillar Architectural Matrix Grid */
+/* Right: 3-Pillar Architectural Matrix Grid */
 .guarantee-pillars-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(16px, 2vw, 24px);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 1.8vw, 24px);
 }
 
 .guarantee-pillar-card {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 20px;
-  padding: clamp(22px, 2.5vw, 28px);
+  padding: clamp(20px, 2.2vw, 26px);
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -1790,6 +2081,8 @@ button {
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .guarantee-pillar-card:hover {
@@ -1803,7 +2096,7 @@ button {
 .pillar-header-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
 }
 
@@ -1832,14 +2125,6 @@ button {
   box-shadow: 0 6px 16px rgba(234, 74, 54, 0.35);
 }
 
-.pillar-serial-chip {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #94a3b8;
-  text-transform: uppercase;
-}
-
 .pillar-card-content {
   display: flex;
   flex-direction: column;
@@ -1860,850 +2145,482 @@ button {
   line-height: 1.55;
 }
 
-.pillar-micro-perk {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.775rem;
-  font-weight: 600;
-  color: #ea4a36;
-  margin-top: auto;
-  padding-top: 6px;
-  border-top: 1px dashed #f1f5f9;
-}
-
-.perk-bullet {
-  font-size: 1rem;
-  line-height: 1;
-}
-
 /* ==========================================================================
-   9. DENON HOME SPEAKERS SHOWCASE (ELEVATED AUDIOPHILE STAGE SHOWCASE)
+   9. SHOP DENON HOME SPEAKERS (BANNER & INTERACTIVE CATEGORY SHOWCASE)
    ========================================================================== */
-.speakers-showcase-section {
-  background: #ffffff;
-  color: #0f172a;
-  padding: clamp(80px, 10vw, 130px) 0;
+.denon-shop-speakers-section {
   position: relative;
   z-index: 10;
-}
-
-.showcase-container {
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 clamp(20px, 3.5vw, 60px);
-  box-sizing: border-box;
 }
 
-/* Master Section Header */
-.showcase-header {
+/* Category Hero Banner (Matching Reference UI) */
+.denon-shop-banner-hero {
+  position: relative;
+  min-height: clamp(340px, 36vw, 420px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   text-align: center;
-  margin-bottom: clamp(52px, 7vw, 80px);
-  max-width: 860px;
-  margin-left: auto;
-  margin-right: auto;
+  background: #090a0d;
 }
 
-.award-winner-ribbon {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  border-radius: var(--radius-pill);
-  background: #0f172a;
-  color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
-}
-
-.award-winner-ribbon .award-star {
-  color: #f59e0b;
-  font-size: 0.85rem;
-}
-
-.showcase-title {
-  font-size: clamp(2.5rem, 4.4vw, 3.8rem);
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.035em;
-  line-height: 1.1;
-  margin-bottom: 18px;
-}
-
-.showcase-subtitle {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #475569;
-  font-weight: 400;
-}
-
-/* 3 Sculpted Stage Cards Grid */
-.speaker-products-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(24px, 2.5vw, 36px);
-  align-items: stretch;
-}
-
-.speaker-product-card {
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid #e5e7eb;
-  box-shadow:
-    0 10px 30px rgba(15, 23, 42, 0.05),
-    0 1px 3px rgba(15, 23, 42, 0.03);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-}
-
-.speaker-product-card:hover {
-  transform: translateY(-12px);
-  box-shadow:
-    0 28px 60px -15px rgba(15, 23, 42, 0.15),
-    0 0 0 1px rgba(234, 74, 54, 0.25);
-  border-color: rgba(234, 74, 54, 0.3);
-}
-
-/* Featured Centerpiece Card Accent */
-.speaker-card-featured {
-  border-color: rgba(234, 74, 54, 0.4);
-  box-shadow:
-    0 16px 40px -10px rgba(234, 74, 54, 0.15),
-    0 1px 3px rgba(15, 23, 42, 0.04);
-}
-
-.card-featured-badge {
+.denon-shop-banner-bg-wrap {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 5;
-  background: linear-gradient(135deg, #f25542 0%, #db3421 100%);
-  color: #ffffff;
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 4px 12px rgba(234, 74, 54, 0.4);
-}
-
-.card-room-indicator {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 18px;
-  background: #f8fafc;
-  border-bottom: 1px solid #f1f5f9;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #64748b;
-  text-transform: uppercase;
-}
-
-.card-room-indicator .indicator-icon {
-  color: #ea4a36;
-}
-
-/* Image Media Stage */
-.speaker-media-frame {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
-  overflow: hidden;
-}
-
-.speaker-card-picture {
-  display: block;
+  inset: 0;
   width: 100%;
   height: 100%;
 }
 
-.speaker-product-img {
+.denon-shop-banner-bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1.02);
+  filter: brightness(0.9);
 }
 
-.speaker-product-card:hover .speaker-product-img {
-  transform: scale(1.06);
-}
-
-.speaker-spec-pill {
+.denon-shop-banner-overlay {
   position: absolute;
-  bottom: 12px;
-  left: 14px;
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  background: rgba(15, 23, 42, 0.78);
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(9, 10, 13, 0.7) 0%,
+    rgba(9, 10, 13, 0.6) 50%,
+    rgba(9, 10, 13, 0.8) 100%
+  );
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+}
+
+.denon-shop-banner-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(48px, 6vw, 76px) 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.denon-shop-banner-title {
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0 0 12px 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+.denon-shop-banner-subtitle {
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 0 clamp(26px, 3.6vw, 38px) 0;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Category Filter Pills (Matching Reference UI: Outline Pill Buttons) */
+.denon-shop-pills-dock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.denon-shop-pill {
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: #ffffff;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-/* Card Body Content */
-.speaker-card-body {
-  padding: clamp(24px, 2.5vw, 32px);
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.speaker-header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-}
-
-.speaker-card-title {
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.025em;
-}
-
-.speaker-badge-mini {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #ea4a36;
-  background: rgba(234, 74, 54, 0.08);
-  border: 1px solid rgba(234, 74, 54, 0.2);
-  padding: 3px 9px;
-  border-radius: var(--radius-pill);
-  letter-spacing: 0.02em;
-}
-
-.speaker-card-desc {
-  font-size: 0.93rem;
-  line-height: 1.68;
-  color: #475569;
-  margin-bottom: 22px;
-  flex-grow: 1;
-}
-
-/* Feature Chips */
-.speaker-feature-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 24px;
-}
-
-.feature-tag {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #475569;
-  background: #f1f5f9;
-  padding: 3px 9px;
-  border-radius: 6px;
-}
-
-.speaker-card-action {
-  margin-top: auto;
-}
-
-.btn-speaker-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 14px 24px;
-  border-radius: 9999px;
-  background: #0f172a;
-  color: #ffffff;
-  font-size: 0.8125rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 10px 24px;
+  cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  text-decoration: none;
+  white-space: nowrap;
+  font-family: inherit;
+  outline: none;
 }
 
-.btn-speaker-cta:hover {
-  background: #ea4a36;
-  box-shadow: 0 8px 24px rgba(234, 74, 54, 0.4);
+.denon-shop-pill:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.22);
   transform: translateY(-2px);
-  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
-.btn-speaker-cta-featured {
-  background: linear-gradient(135deg, #f25542 0%, #db3421 100%);
-  box-shadow: 0 6px 20px rgba(234, 74, 54, 0.35);
-}
-
-.btn-speaker-cta-featured:hover {
-  background: linear-gradient(135deg, #f86b59 0%, #e6402d 100%);
-  box-shadow: 0 10px 28px rgba(234, 74, 54, 0.5);
-}
-
-.btn-speaker-cta svg {
-  transition: transform 0.2s ease;
-}
-
-.btn-speaker-cta:hover svg {
-  transform: translateX(4px);
+.denon-shop-pill.active {
+  background: #ffffff;
+  color: #0b0f19;
+  border-color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================================================================
-   10. DENON SOUND LIVING (EDITORIAL MAGAZINE & CINEMA SOUNDSTAGE)
+   BEST SELLING DENON ACCESSORIES (CAROUSEL & CATEGORY CAPSULE DOCK)
    ========================================================================== */
-.denon-feature-story-section {
-  background: #f8fafc;
-  padding: clamp(70px, 9vw, 120px) 0;
+.denon-accessories-section {
+  background: #ffffff;
+  padding: clamp(60px, 8vw, 100px) 0 clamp(70px, 9vw, 110px);
   position: relative;
   z-index: 10;
   border-top: 1px solid #eef2f6;
 }
 
-.story-section-container {
+.accessories-container {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 clamp(20px, 3.5vw, 60px);
-  display: flex;
-  flex-direction: column;
-  gap: clamp(70px, 9vw, 110px);
   box-sizing: border-box;
 }
 
-/* STAGE 1: EDITORIAL MAGAZINE CARD */
-.editorial-magazine-card {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr;
+/* Section Title Header */
+.accessories-header {
+  text-align: center;
+  margin-bottom: clamp(24px, 3vw, 36px);
+}
+
+.accessories-main-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: #1e1b4b;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* Category Pill Capsule Dock (Matching Reference UI) */
+.accessories-capsule-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: clamp(36px, 4.5vw, 52px);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 16px 12px;
+  box-sizing: border-box;
+}
+
+.accessories-capsule-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.accessories-capsule-dock {
+  background: #eaedf2;
+  border-radius: 9999px;
+  padding: 6px 8px;
+  display: inline-flex;
   align-items: center;
-  gap: clamp(40px, 6vw, 90px);
+  gap: 4px;
+  width: max-content;
+  min-width: max-content;
+  max-width: none;
+  margin: 0 auto;
+  box-sizing: border-box;
+  box-shadow: inset 0 1px 3px rgba(15, 23, 42, 0.06);
+  flex-shrink: 0;
+}
+
+.acc-pill-btn {
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  padding: 9px 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  font-family: inherit;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.acc-pill-btn:hover {
+  color: #0f172a;
+}
+
+.acc-pill-btn.active {
+  background: #ffffff;
+  color: #0f172a;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+}
+
+/* Accessories Swiper Carousel */
+.accessories-carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.accessories-swiper {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 4px 16px;
+}
+
+.accessories-swiper .swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.accessories-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+/* Individual Accessory Card (Matching Reference UI Structure) */
+.accessory-card {
+  width: 100%;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 32px;
-  padding: clamp(36px, 5vw, 64px);
-  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.04);
-}
-
-.magazine-content-col {
+  border-radius: 16px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
 }
 
-.magazine-category-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 5px 12px;
-  border-radius: var(--radius-pill);
-  background: rgba(15, 23, 42, 0.05);
+.accessory-card:hover {
+  transform: translateY(-6px);
+  border-color: #cbd5e1;
+  box-shadow:
+    0 16px 32px -8px rgba(15, 23, 42, 0.1),
+    0 0 0 1px rgba(15, 23, 42, 0.06);
+}
+
+/* Part Badge (Top-Left) */
+.acc-part-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 3;
+  background: #38153b;
+  color: #ffffff;
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #64748b;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-  width: fit-content;
+  letter-spacing: 0.03em;
+  padding: 4px 12px;
+  border-radius: 6px;
+  line-height: 1.2;
 }
 
-.magazine-category-badge .badge-spark {
-  color: #ea4a36;
-}
-
-.magazine-headline {
-  font-size: clamp(2.3rem, 3.8vw, 3.4rem);
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.03em;
-  line-height: 1.14;
-  margin-bottom: 24px;
-}
-
-.magazine-copy-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  color: #475569;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 28px;
-}
-
-.magazine-lead {
-  font-size: 1.15rem;
-  color: #1e293b;
-  font-weight: 500;
-  line-height: 1.6;
-}
-
-.magazine-sublead {
-  color: #64748b;
-}
-
-/* Room Selector Dock */
-.room-selector-dock {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 32px;
-}
-
-.room-card-chip {
-  padding: 10px 12px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.room-chip-title {
-  font-size: 0.8125rem;
-  font-weight: 800;
-  color: #0f172a;
-}
-
-.room-chip-desc {
-  font-size: 0.6875rem;
-  color: #64748b;
-}
-
-.magazine-action-row {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.btn-magazine-editorial {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 14px 12px 28px;
-  border-radius: 9999px;
-  background: #0f172a;
-  color: #ffffff;
-  font-size: 0.8125rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.15);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  width: fit-content;
-}
-
-.editorial-arrow-circle {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #ea4a36;
-  color: #ffffff;
+/* Image Media Box - Tall Portrait Proportions Matching Reference UI */
+.acc-media-box {
+  width: 100%;
+  height: 310px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease;
-}
-
-.btn-magazine-editorial:hover {
-  background: #ea4a36;
-  color: #ffffff;
-  box-shadow: 0 8px 24px rgba(234, 74, 54, 0.35);
-  transform: translateY(-2px);
-}
-
-.btn-magazine-editorial:hover .editorial-arrow-circle {
+  padding: 30px 20px 48px;
+  box-sizing: border-box;
   background: #ffffff;
-  color: #ea4a36;
-  transform: translateX(2px);
-}
-
-.read-duration-pill {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #94a3b8;
-  text-transform: uppercase;
-}
-
-/* Magazine Image Stage */
-.magazine-media-col {
-  width: 100%;
-}
-
-.magazine-image-stage {
   position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 11;
-  border-radius: 24px;
   overflow: hidden;
-  background: #f1f5f9;
-  box-shadow: 0 16px 45px -15px rgba(15, 23, 42, 0.14);
 }
 
-.magazine-featured-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.acc-product-img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
   display: block;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.magazine-image-stage:hover .magazine-featured-img {
+.accessory-card:hover .acc-product-img {
   transform: scale(1.04);
 }
 
-.magazine-placeholder-fallback {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-  color: #64748b;
-}
-
-.placeholder-icon-ring {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-}
-
-.placeholder-txt {
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.floating-editorial-glass-card {
+/* Hover Action Row (Quick View & Add to Cart Pills) */
+.acc-hover-actions {
   position: absolute;
-  bottom: 16px;
-  right: 16px;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  background: rgba(15, 23, 42, 0.78);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #ffffff;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.glass-dot-indicator {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ea4a36;
-}
-
-/* STAGE 2: THE HEOS® CINEMATIC SOUNDSTAGE & WHOLE-HOME HUB */
-.heos-cinema-console {
-  display: grid;
-  grid-template-columns: 1.18fr 1fr;
-  align-items: center;
-  gap: clamp(40px, 6vw, 90px);
-  background: radial-gradient(circle at 80% 20%, #172235 0%, #090d15 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 32px;
-  padding: clamp(36px, 5vw, 64px);
-  color: #ffffff;
-  box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.6);
-  position: relative;
-  overflow: hidden;
-}
-
-.cinema-video-col {
-  width: 100%;
-}
-
-.cinema-display-bezel {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.video-hud-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 4px;
-}
-
-.hud-live-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 0.6875rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-.live-pulse-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #2ed573;
-  box-shadow: 0 0 10px #2ed573;
-  animation: pulseDot 1.8s infinite ease-in-out;
-}
-
-.hud-codec-pill {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #ea4a36;
-  background: rgba(234, 74, 54, 0.15);
-  border: 1px solid rgba(234, 74, 54, 0.3);
-  padding: 3px 8px;
-  border-radius: var(--radius-pill);
-}
-
-.video-canvas-container {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: 22px;
-  overflow: hidden;
-  background: #000000;
-  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.cinema-heos-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.video-overlay-banner {
-  position: absolute;
-  bottom: clamp(20px, 4vw, 36px);
+  bottom: 14px;
   left: 0;
   right: 0;
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 0 20px;
-  z-index: 3;
+  gap: 8px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  z-index: 5;
+  opacity: 0;
+  transform: translateY(10px);
   pointer-events: none;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.video-overlay-text {
-  font-size: clamp(1.4rem, 2.6vw, 2.3rem);
-  font-weight: 800;
+.accessory-card:hover .acc-hover-actions {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Individual Pill Buttons */
+.acc-action-pill {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #e9ecef;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 9999px;
+  padding: 8px 15px;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #111827;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.acc-action-pill svg {
+  flex-shrink: 0;
+  color: #111827;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.acc-action-pill:hover {
+  background: #111827;
   color: #ffffff;
-  letter-spacing: -0.02em;
-  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.85);
+  border-color: #111827;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(17, 24, 39, 0.22);
 }
 
-.video-mute-toggle-btn {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 4;
-  width: 40px;
-  height: 40px;
+.acc-action-pill:hover svg {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.acc-action-pill:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Bottom Information Row */
+.acc-info-row {
+  margin-top: auto;
+  border-top: 1px solid #eef2f6;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #ffffff;
+}
+
+.acc-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.acc-price {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #0f172a;
+  flex-shrink: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Navigation Toolbar with Progress Line Track */
+.accessories-nav-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: clamp(28px, 4vw, 44px);
+  width: 100%;
+}
+
+.acc-nav-btn {
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #ffffff;
+  border: 1.5px solid #94a3b8;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.video-mute-toggle-btn:hover {
-  background: #ea4a36;
-  border-color: #ea4a36;
-  transform: scale(1.08);
-}
-
-/* Live Multi-Room Network Sync Chips */
-.heos-live-room-nodes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.room-node-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #cbd5e1;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
-.room-node-chip.active-node {
-  background: rgba(234, 74, 54, 0.15);
-  border-color: rgba(234, 74, 54, 0.35);
-  color: #ffffff;
-}
-
-.room-node-chip .node-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #94a3b8;
-}
-
-.room-node-chip.active-node .node-dot {
-  background: #2ed573;
-  box-shadow: 0 0 6px #2ed573;
-}
-
-/* Content & Ecosystem Narrative */
-.cinema-content-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.cinema-brand-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 5px 12px;
-  border-radius: var(--radius-pill);
-  background: rgba(234, 74, 54, 0.15);
-  border: 1px solid rgba(234, 74, 54, 0.3);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #ff7663;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-  width: fit-content;
-}
-
-.cinema-headline {
-  font-size: clamp(2.3rem, 3.8vw, 3.4rem);
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: -0.03em;
-  line-height: 1.14;
-  margin-bottom: 22px;
-}
-
-.heos-coral-glow {
-  color: #ff604c;
-  text-shadow: 0 0 24px rgba(255, 96, 76, 0.4);
-}
-
-.heos-coral-glow sup {
-  font-size: 0.5em;
-  vertical-align: super;
-  font-weight: 700;
-}
-
-.cinema-copy-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  color: #cbd5e1;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 30px;
-}
-
-.heos-bold-white {
-  color: #ffffff;
-  font-weight: 700;
-}
-
-/* 3 Interactive Feature Modules */
-.heos-ecosystem-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.ecosystem-feature-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 16px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #334155;
   transition: all 0.25s ease;
-}
-
-.ecosystem-feature-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(234, 74, 54, 0.35);
-  transform: translateX(4px);
-}
-
-.feature-icon-circle {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: rgba(234, 74, 54, 0.15);
-  border: 1px solid rgba(234, 74, 54, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ff6b57;
   flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
 }
 
-.ecosystem-feature-card:hover .feature-icon-circle {
-  background: #ea4a36;
+.acc-nav-btn:hover {
+  border-color: #0f172a;
+  background: #0f172a;
   color: #ffffff;
+  transform: scale(1.06);
 }
 
-.feature-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.feature-info-title {
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.feature-info-desc {
-  font-size: 0.775rem;
+.acc-nav-btn.swiper-button-disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+  border-color: #cbd5e1;
   color: #94a3b8;
-  line-height: 1.4;
 }
+
+.acc-scrollbar-track {
+  flex-grow: 1;
+  max-width: 840px;
+  height: 3px;
+  background: #e2e8f0;
+  border-radius: 9999px;
+  position: relative;
+  overflow: hidden;
+}
+
+.accessories-scrollbar {
+  width: 100% !important;
+  height: 3px !important;
+  background: transparent !important;
+  position: relative !important;
+  left: 0 !important;
+  bottom: 0 !important;
+}
+
+.accessories-scrollbar .swiper-scrollbar-drag {
+  background: #1e1b4b !important;
+  border-radius: 9999px !important;
+  height: 100% !important;
+  cursor: pointer;
+}
+
+
 
 /* ==========================================================================
    11. RESPONSIVE BREAKPOINTS FOR REDESIGNED SECTIONS
@@ -2711,57 +2628,112 @@ button {
 @media (max-width: 1120px) {
   .guarantee-layout-dock {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
 
   .guarantee-brand-col {
     text-align: center;
     align-items: center;
+    max-width: 680px;
+    margin: 0 auto;
   }
 
   .guarantee-pillars-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 
-  .speaker-products-grid {
-    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 960px) {
+  .accessories-capsule-wrapper {
+    justify-content: flex-start;
+    padding: 4px 20px 14px;
   }
 
-  .editorial-magazine-card,
-  .heos-cinema-console {
-    grid-template-columns: 1fr;
-    padding: clamp(28px, 4vw, 44px);
-    gap: 40px;
+  .accessories-capsule-dock {
+    margin: 0;
   }
 
-  .heos-cinema-console .cinema-video-col {
-    order: -1;
+  .acc-pill-btn {
+    padding: 8px 16px;
+    font-size: 0.83rem;
   }
 }
 
 @media (max-width: 768px) {
   .guarantee-pillars-grid {
     grid-template-columns: 1fr;
-  }
-
-  .speaker-products-grid {
-    grid-template-columns: 1fr;
     max-width: 480px;
     margin: 0 auto;
-  }
-
-  .room-selector-dock {
-    grid-template-columns: 1fr;
-  }
-
-  .magazine-action-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .btn-magazine-editorial {
     width: 100%;
-    justify-content: center;
+    gap: 16px;
+  }
+
+  .denon-shop-banner-hero {
+    min-height: 310px;
+  }
+
+  .denon-shop-banner-content {
+    padding: 38px 16px;
+  }
+
+  .denon-shop-pills-dock {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 4px 16px 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    max-width: 100%;
+  }
+
+  .denon-shop-pills-dock::-webkit-scrollbar {
+    display: none;
+  }
+
+  .denon-shop-pill {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .accessories-capsule-wrapper {
+    justify-content: flex-start;
+    padding: 4px 16px 14px;
+  }
+
+  .accessories-capsule-dock {
+    margin: 0;
+    flex-wrap: nowrap;
+  }
+
+  .acc-pill-btn {
+    padding: 7px 15px;
+    font-size: 0.8125rem;
+  }
+
+  .acc-media-box {
+    height: 270px;
+    padding: 24px 16px 46px;
+  }
+
+  .acc-hover-actions {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    bottom: 10px;
+    gap: 6px;
+  }
+
+  .acc-action-pill {
+    padding: 6px 11px;
+    font-size: 0.75rem;
+  }
+
+  .acc-action-pill svg {
+    width: 13px;
+    height: 13px;
   }
 }
 
@@ -2769,53 +2741,55 @@ button {
   .guarantee-pillar-card {
     padding: 20px;
   }
-
-  .heos-live-room-nodes {
-    display: none;
-  }
 }
 
 /* ==========================================================================
-   12. DENON BEST SELLERS (INTERACTIVE SWIPER SLIDER SHOWCASE)
+   SECTION 4: FREQUENTLY ASKED QUESTIONS (DENON ELEVATED FAQ ACCORDION)
    ========================================================================== */
-.denon-bestsellers-section {
-  background: #ffffff;
-  padding: clamp(80px, 10vw, 130px) 0;
+.denon-faq-section {
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f8fafc 100%);
+  padding: clamp(70px, 8.5vw, 115px) 0;
   position: relative;
-  z-index: 10;
-  border-top: 1px solid #eef2f6;
   overflow: hidden;
+  border-top: 1px solid #eef2f6;
+  border-bottom: 1px solid #eef2f6;
 }
 
-.bestsellers-container {
-  width: 100%;
-  max-width: 1440px;
+.denon-faq-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 860px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(234, 74, 54, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.denon-faq-container {
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 3.5vw, 60px);
+  padding: 0 clamp(16px, 3.5vw, 36px);
   box-sizing: border-box;
+  position: relative;
+  z-index: 2;
 }
 
-/* Header Row */
-.bestsellers-header-row {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 32px;
-  margin-bottom: clamp(36px, 5vw, 60px);
+/* Section Header */
+.denon-faq-header {
+  text-align: center;
+  margin-bottom: clamp(38px, 5vw, 56px);
 }
 
-.bestsellers-title-col {
-  max-width: 760px;
-}
-
-.bestsellers-kicker-badge {
+.denon-faq-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  border-radius: var(--radius-pill);
+  border-radius: 9999px;
   background: rgba(234, 74, 54, 0.08);
-  border: 1px solid rgba(234, 74, 54, 0.2);
+  border: 1px solid rgba(234, 74, 54, 0.22);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -2824,605 +2798,314 @@ button {
   margin-bottom: 16px;
 }
 
-.bestsellers-kicker-badge .kicker-spark {
+.denon-faq-badge svg {
   color: #ea4a36;
 }
 
-.bestsellers-headline {
-  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.035em;
-  line-height: 1.12;
-  margin-bottom: 14px;
-}
-
-.bestsellers-subhead {
-  font-size: 1.1rem;
-  color: #64748b;
-  line-height: 1.6;
-}
-
-/* Custom Controls Pod */
-.bestsellers-controls-wrap {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-shrink: 0;
-}
-
-.bestsellers-swiper-pagination {
-  position: static !important;
-  display: flex;
-  gap: 6px;
-  width: auto !important;
-}
-
-.bestsellers-swiper-pagination .swiper-pagination-bullet {
-  width: 24px;
-  height: 4px;
-  border-radius: 4px;
-  background: #cbd5e1;
-  opacity: 0.7;
-  transition: all 0.25s ease;
-  margin: 0 !important;
-}
-
-.bestsellers-swiper-pagination .swiper-pagination-bullet-active {
-  width: 44px;
-  background: #ea4a36;
-  opacity: 1;
-}
-
-.bestsellers-arrows-pair {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.bestsellers-nav-btn {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: #f8fafc;
-  border: 1.5px solid #e2e8f0;
-  color: #0f172a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
-}
-
-.bestsellers-nav-btn:hover {
-  background: #ea4a36;
-  border-color: #ea4a36;
-  color: #ffffff;
-  transform: scale(1.06);
-  box-shadow: 0 8px 20px rgba(234, 74, 54, 0.35);
-}
-
-.bestsellers-nav-btn.swiper-button-disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-  transform: none;
-  background: #f8fafc;
-  color: #94a3b8;
-  border-color: #e2e8f0;
-  box-shadow: none;
-}
-
-/* Swiper Outer Container */
-.bestsellers-swiper {
-  width: 100%;
-  overflow: visible !important;
-  padding-bottom: 24px;
-}
-
-/* Product Card */
-.bestseller-product-card {
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow:
-    0 8px 24px rgba(15, 23, 42, 0.04),
-    0 1px 3px rgba(15, 23, 42, 0.02);
-  transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1);
-  height: 100%;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.bestseller-product-card:hover {
-  transform: translateY(-10px);
-  box-shadow:
-    0 24px 50px -10px rgba(15, 23, 42, 0.12),
-    0 0 0 1px rgba(234, 74, 54, 0.3);
-  border-color: rgba(234, 74, 54, 0.35);
-}
-
-/* Category Rank Tag */
-.bestseller-rank-tag {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 18px;
-  background: #f8fafc;
-  border-bottom: 1px solid #f1f5f9;
-  font-size: 0.6875rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: #64748b;
-  text-transform: uppercase;
-}
-
-.bestseller-rank-tag .rank-bullet {
-  color: #ea4a36;
-  font-size: 1rem;
-  line-height: 1;
-}
-
-/* Media Stage */
-.bestseller-media-stage {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
-  overflow: hidden;
-}
-
-.bestseller-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.bestseller-product-card:hover .bestseller-img {
-  transform: scale(1.06);
-}
-
-.bestseller-cd-fallback {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #101622 0%, #1c2638 100%);
-  color: #94a3b8;
-}
-
-.cd-deck-graphic {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.cd-deck-graphic span {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #cbd5e1;
-}
-
-.bestseller-stage-pill {
-  position: absolute;
-  bottom: 12px;
-  left: 14px;
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  background: rgba(15, 23, 42, 0.78);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #ffffff;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-/* Body Content */
-.bestseller-card-content {
-  padding: clamp(22px, 2.5vw, 25px);
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.bestseller-card-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.bestseller-item-name {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.025em;
-}
-
-.bestseller-rating {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #0f172a;
-}
-
-.bestseller-rating .rating-stars {
-  color: #f59e0b;
-  font-size: 0.8rem;
-}
-
-.bestseller-item-desc {
-  font-size: 0.925rem;
-  line-height: 1.65;
-  color: #475569;
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-/* Spec Tags */
-.bestseller-spec-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 24px;
-}
-
-.bestseller-spec-tags span {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #475569;
-  background: #f1f5f9;
-  padding: 3px 9px;
-  border-radius: 6px;
-}
-
-.bestseller-action-row {
-  margin-top: auto;
-}
-
-.btn-bestseller-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 13px 22px;
-  border-radius: 9999px;
-  background: #0f172a;
-  color: #ffffff;
-  font-size: 0.8125rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  text-decoration: none;
-}
-
-.btn-bestseller-cta:hover {
-  background: #ea4a36;
-  box-shadow: 0 8px 24px rgba(234, 74, 54, 0.4);
-  transform: translateY(-2px);
-  color: #ffffff;
-}
-
-.btn-bestseller-cta svg {
-  transition: transform 0.2s ease;
-}
-
-.btn-bestseller-cta:hover svg {
-  transform: translateX(4px);
-}
-
-/* Swiper Scrollbar Track */
-.bestsellers-scrollbar {
-  margin-top: 28px;
-  height: 4px !important;
-  background: #e2e8f0 !important;
-  border-radius: 4px;
-  position: relative !important;
-}
-
-.bestsellers-scrollbar .swiper-scrollbar-drag {
-  background: #ea4a36 !important;
-  border-radius: 4px;
-}
-
-@media (max-width: 900px) {
-  .bestsellers-header-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .bestsellers-controls-wrap {
-    width: 100%;
-    justify-content: space-between;
-  }
-}
-
-/* ==========================================================================
-   13. AUSTERE ACCESSORIES (EXCEPTIONAL SOUND & CONNECTIONS SHOWCASE)
-   ========================================================================== */
-.denon-austere-section {
-  background: #f8fafc;
-  padding: clamp(70px, 9vw, 120px) 0;
-  position: relative;
-  z-index: 10;
-  border-top: 1px solid #eef2f6;
-}
-
-.austere-container {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 clamp(20px, 3.5vw, 60px);
-  box-sizing: border-box;
-}
-
-.austere-showcase-panel {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  align-items: center;
-  gap: clamp(40px, 6vw, 84px);
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 32px;
-  padding: clamp(32px, 4.5vw, 60px);
-  box-shadow: 0 16px 45px rgba(15, 23, 42, 0.04);
-}
-
-/* Media Column & Stage */
-.austere-media-col {
-  width: 100%;
-}
-
-.austere-image-stage {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 11;
-  border-radius: 24px;
-  overflow: hidden;
-  background: #f1f5f9;
-  box-shadow: 0 14px 40px -12px rgba(15, 23, 42, 0.12);
-}
-
-.austere-feature-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.austere-image-stage:hover .austere-feature-img {
-  transform: scale(1.05);
-}
-
-/* Fallback Cable Graphic */
-.austere-placeholder-fallback {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #101622 0%, #1e293b 100%);
-  color: #94a3b8;
-  padding: 24px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.cable-graphic-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.fallback-brand {
-  font-size: 0.875rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  color: #ffffff;
-}
-
-.fallback-note {
-  font-size: 0.75rem;
-  color: #ea4a36;
-  font-weight: 600;
-}
-
-.austere-floating-tag {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  background: rgba(15, 23, 42, 0.82);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #ffffff;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.austere-floating-tag .tag-spark {
-  color: #ea4a36;
-}
-
-/* Content Column */
-.austere-content-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.austere-kicker-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 5px 12px;
-  border-radius: var(--radius-pill);
-  background: rgba(15, 23, 42, 0.05);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  color: #64748b;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-  width: fit-content;
-}
-
-.austere-kicker-badge .badge-spark {
-  color: #ea4a36;
-}
-
-.austere-headline {
-  font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+.denon-faq-title {
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
   font-weight: 800;
   color: #0f172a;
   letter-spacing: -0.03em;
-  line-height: 1.14;
-  margin-bottom: 22px;
+  margin: 0 0 14px 0;
+  line-height: 1.15;
 }
 
-.austere-desc {
-  font-size: 1.05rem;
-  line-height: 1.7;
+.denon-faq-subtitle {
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 0 auto clamp(26px, 3.2vw, 36px);
+}
+
+/* Category Filter Dock */
+.denon-faq-filter-dock {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: #f1f5f9;
+  padding: 6px;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  box-shadow: inset 0 2px 4px rgba(15, 23, 42, 0.02);
+}
+
+.faq-filter-btn {
+  padding: 8px 18px;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
   color: #475569;
-  margin-bottom: 28px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
 }
 
-/* Feature Checkmark Pills */
-.austere-feature-pills {
+.faq-filter-btn:hover {
+  color: #0f172a;
+}
+
+.faq-filter-btn.active {
+  background: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+}
+
+/* FAQ Accordion List */
+.denon-faq-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 32px;
+  gap: 14px;
+  margin-bottom: clamp(40px, 6vw, 64px);
 }
 
-.austere-pill-item {
+/* FAQ Item Card */
+.denon-faq-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+}
+
+.denon-faq-item.faq-hidden {
+  display: none !important;
+}
+
+.denon-faq-item:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.denon-faq-item.is-open {
+  border-color: rgba(234, 74, 54, 0.36);
+  box-shadow: 0 12px 32px -4px rgba(234, 74, 54, 0.09), 0 4px 16px rgba(15, 23, 42, 0.03);
+}
+
+/* Question Header Button */
+.denon-faq-question {
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #1e293b;
+  justify-content: space-between;
+  gap: 16px;
+  padding: clamp(18px, 2.4vw, 24px) clamp(18px, 2.5vw, 28px);
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+  transition: background 0.25s ease;
 }
 
-.pill-check {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: rgba(234, 74, 54, 0.12);
+.faq-q-text {
+  font-size: clamp(0.98rem, 1.15vw, 1.08rem);
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.4;
+  flex: 1;
+  transition: color 0.25s ease;
+}
+
+.denon-faq-item:hover .faq-q-text,
+.denon-faq-item.is-open .faq-q-text {
   color: #ea4a36;
-  font-size: 0.75rem;
-  font-weight: 800;
+}
+
+/* Circular Rotating Toggle Icon */
+.faq-toggle-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.denon-faq-item:hover .faq-toggle-icon {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.denon-faq-item.is-open .faq-toggle-icon {
+  background: #ea4a36;
+  color: #ffffff;
+  transform: rotate(45deg);
+  box-shadow: 0 4px 12px rgba(234, 74, 54, 0.35);
+}
+
+/* Answer Collapsible Body - Completely Hidden When Inactive */
+.denon-faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.35s ease,
+              opacity 0.25s ease;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.denon-faq-item.is-open .denon-faq-answer {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  opacity: 1;
+}
+
+.faq-answer-inner {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 clamp(18px, 2.5vw, 28px);
+  transition: padding 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.denon-faq-item.is-open .faq-answer-inner {
+  padding: 4px clamp(18px, 2.5vw, 28px) clamp(20px, 2.4vw, 26px);
+}
+
+.faq-answer-inner p {
+  font-size: clamp(0.9rem, 1.05vw, 0.98rem);
+  line-height: 1.72;
+  color: #475569;
+  margin: 0;
+}
+
+/* Bottom Contact Callout Card (Elevated Luxury Design) */
+.denon-faq-contact-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(24px, 3.5vw, 36px) clamp(24px, 4vw, 44px);
+  border-radius: 20px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.faq-contact-glow {
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(234, 74, 54, 0.32) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.faq-contact-content {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 22px);
+  z-index: 1;
+  flex: 1;
+}
+
+.faq-contact-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(234, 74, 54, 0.16);
+  border: 1px solid rgba(234, 74, 54, 0.35);
+  color: #ea4a36;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-/* Action Button */
-.austere-action-row {
-  display: flex;
-  align-items: center;
+.faq-contact-heading {
+  font-size: clamp(1.15rem, 1.45vw, 1.38rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 5px 0;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
 }
 
-.btn-austere-action {
+.faq-contact-subtext {
+  font-size: clamp(0.85rem, 0.95vw, 0.94rem);
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.btn-faq-contact {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 14px 12px 28px;
+  gap: 10px;
+  padding: 13px 26px;
   border-radius: 9999px;
-  border: 1.5px solid #0f172a;
-  background: transparent;
-  color: #0f172a;
-  font-size: 0.8125rem;
+  background: #ea4a36;
+  color: #ffffff;
+  font-size: 0.875rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   text-decoration: none;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  width: fit-content;
+  box-shadow: 0 6px 20px rgba(234, 74, 54, 0.35);
+  white-space: nowrap;
+  z-index: 1;
 }
 
-.btn-austere-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #0f172a;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
-}
-
-.btn-austere-action:hover {
-  background: #ea4a36;
-  border-color: #ea4a36;
-  color: #ffffff;
-  box-shadow: 0 8px 24px rgba(234, 74, 54, 0.35);
+.btn-faq-contact:hover {
+  background: #d83d2a;
   transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(234, 74, 54, 0.5);
 }
 
-.btn-austere-action:hover .btn-austere-icon {
-  background: #ffffff;
-  color: #ea4a36;
-  transform: translateX(2px);
+.btn-faq-contact svg {
+  transition: transform 0.25s ease;
 }
 
-/* Responsive Media Queries for Austere Section */
-@media (max-width: 1080px) {
-  .austere-showcase-panel {
-    grid-template-columns: 1fr;
-    padding: clamp(28px, 4vw, 44px);
-    gap: 36px;
-  }
+.btn-faq-contact:hover svg {
+  transform: translateX(3px);
 }
 
+/* FAQ Responsive Queries */
 @media (max-width: 768px) {
-  .btn-austere-action {
+  .denon-faq-contact-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .btn-faq-contact {
     width: 100%;
     justify-content: center;
+    box-sizing: border-box;
   }
 }
 
 /* ==========================================================================
-   14. DENON X POLK VINYL BUNDLES (ANALOG LISTENING EXPERIENCES)
+   12. DENON HOME CINEMATIC SPEAKER SHOWCASE (LUXURY DARK AESTHETIC)
    ========================================================================== */
-.denon-vinyl-bundles-section {
+.denon-speaker-banner-section {
   background: #ffffff;
-  padding: clamp(80px, 10vw, 130px) 0;
+  padding: clamp(50px, 7vw, 90px) 0;
   position: relative;
   z-index: 10;
-  border-top: 1px solid #eef2f6;
 }
 
-.vinyl-bundles-container {
+.speaker-banner-container {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -3430,273 +3113,205 @@ button {
   box-sizing: border-box;
 }
 
-/* Master Section Header */
-.vinyl-master-header {
-  text-align: center;
-  max-width: 860px;
-  margin: 0 auto clamp(56px, 7vw, 90px);
-}
-
-.vinyl-kicker-badge {
-  display: inline-flex;
+.speaker-banner-card {
+  background:
+    radial-gradient(circle at 85% 45%, rgba(234, 74, 54, 0.18) 0%, rgba(15, 23, 42, 0) 60%),
+    linear-gradient(145deg, #0e1624 0%, #090e18 55%, #05080f 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 32px;
+  box-shadow:
+    0 30px 75px -15px rgba(5, 8, 15, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+  padding: clamp(40px, 5.5vw, 64px) clamp(28px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
   align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  background: rgba(234, 74, 54, 0.08);
-  border: 1px solid rgba(234, 74, 54, 0.2);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  color: #ea4a36;
-  text-transform: uppercase;
-  margin-bottom: 16px;
+  gap: clamp(32px, 5vw, 64px);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.vinyl-kicker-badge .kicker-spark {
-  color: #ea4a36;
+/* Subtle background accent glow lines */
+.speaker-banner-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 30%, rgba(234, 74, 54, 0.5) 70%, transparent 100%);
 }
 
-.vinyl-main-title {
-  font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+.speaker-banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.speaker-acoustic-tag {
+  display: block;
+  font-size: clamp(0.95rem, 1.2vw, 1.125rem);
+  font-weight: 600;
+  color: #cbd5e1;
+  letter-spacing: -0.01em;
+  margin-bottom: clamp(14px, 1.8vw, 20px);
+}
+
+.speaker-banner-title {
+  font-size: clamp(2.1rem, 3.8vw, 3.25rem);
   font-weight: 800;
-  color: #0f172a;
+  color: #ffffff;
   letter-spacing: -0.035em;
   line-height: 1.12;
-  margin-bottom: 16px;
+  margin: 0 0 clamp(24px, 3.2vw, 36px);
 }
 
-.vinyl-subhead {
-  font-size: 1.1rem;
-  color: #64748b;
-  line-height: 1.65;
+.speaker-coral-gradient {
+  background: linear-gradient(135deg, #ffffff 10%, #fbd5b5 50%, #ea4a36 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Bundle Showcase Panels */
-.vinyl-bundle-panel {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  align-items: center;
-  gap: clamp(40px, 6vw, 84px);
-  margin-bottom: clamp(64px, 8vw, 100px);
-}
-
-.vinyl-bundle-panel:last-child {
-  margin-bottom: 0;
-}
-
-.vinyl-panel-reversed {
-  grid-template-columns: 1.15fr 1fr;
-}
-
-/* Content Column */
-.vinyl-content-col {
+/* Actions Row */
+.speaker-banner-actions {
   display: flex;
-  flex-direction: column;
+  align-items: center;
 }
 
-.vinyl-panel-kicker {
+.btn-speaker-primary {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 5px 12px;
-  border-radius: var(--radius-pill);
-  background: rgba(15, 23, 42, 0.05);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: #64748b;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  width: fit-content;
-}
-
-.vinyl-panel-kicker .panel-spark {
-  color: #ea4a36;
-}
-
-.vinyl-panel-title {
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.025em;
-  line-height: 1.16;
-  margin-bottom: 18px;
-}
-
-.vinyl-panel-desc {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #475569;
-  margin-bottom: 24px;
-}
-
-/* Spec Chips */
-.vinyl-feature-tags {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 30px;
-}
-
-.vinyl-spec-chip {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #1e293b;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* Action Button */
-.vinyl-action-wrap {
-  display: flex;
-  align-items: center;
-}
-
-.btn-vinyl-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 14px 12px 28px;
-  border-radius: 9999px;
-  border: 1.5px solid #0f172a;
-  background: transparent;
-  color: #0f172a;
+  gap: 10px;
+  background: linear-gradient(135deg, #ea4a36 0%, #d83a27 100%);
+  color: #ffffff;
   font-size: 0.8125rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
+  padding: 14px 30px;
+  border-radius: 9999px;
+  box-shadow: 0 8px 24px rgba(234, 74, 54, 0.38);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  width: fit-content;
 }
 
-.btn-vinyl-arrow {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #0f172a;
+.btn-speaker-primary:hover {
+  background: linear-gradient(135deg, #f05a47 0%, #ea4a36 100%);
   color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(234, 74, 54, 0.55);
+}
+
+.btn-speaker-primary svg {
+  transition: transform 0.2s ease;
+}
+
+.btn-speaker-primary:hover svg {
+  transform: translateX(3px);
+}
+
+/* Media Stage (Right Column) */
+.speaker-banner-media {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
-}
-
-.btn-vinyl-outline:hover {
-  background: #ea4a36;
-  border-color: #ea4a36;
-  color: #ffffff;
-  box-shadow: 0 8px 24px rgba(234, 74, 54, 0.35);
-  transform: translateY(-2px);
-}
-
-.btn-vinyl-outline:hover .btn-vinyl-arrow {
-  background: #ffffff;
-  color: #ea4a36;
-  transform: translateX(2px);
-}
-
-/* Media Column & Stage */
-.vinyl-media-col {
   width: 100%;
 }
 
-.vinyl-image-frame {
+.speaker-media-halo {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(234, 74, 54, 0.22) 0%, rgba(245, 158, 11, 0.1) 45%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.speaker-media-frame {
   position: relative;
+  z-index: 2;
   width: 100%;
-  aspect-ratio: 16 / 11;
-  border-radius: 28px;
+  border-radius: 24px;
   overflow: hidden;
-  background: #f1f5f9;
-  box-shadow: 0 16px 45px -12px rgba(15, 23, 42, 0.12);
+  background: #060910;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
 }
 
-.vinyl-featured-img {
+.speaker-banner-img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 420px;
   object-fit: cover;
   display: block;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.vinyl-image-frame:hover .vinyl-featured-img {
-  transform: scale(1.05);
+.speaker-banner-card:hover .speaker-banner-img {
+  transform: scale(1.04);
 }
 
-/* Fallback Graphic */
-.vinyl-placeholder-fallback {
-  width: 100%;
-  height: 100%;
+.speaker-floating-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  background: rgba(11, 17, 29, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 8px 14px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0e1420 0%, #1e293b 100%);
-  color: #94a3b8;
-  padding: 24px;
-  text-align: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  letter-spacing: 0.04em;
   box-sizing: border-box;
 }
 
-.vinyl-icon-graphic {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.fallback-vinyl-title {
-  font-size: 0.875rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  color: #ffffff;
-}
-
-.fallback-vinyl-hint {
-  font-size: 0.75rem;
+.badge-sparkle {
   color: #ea4a36;
-  font-weight: 600;
-}
-
-.vinyl-floating-badge {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  background: rgba(15, 23, 42, 0.82);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #ffffff;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 /* Responsive Media Queries */
-@media (max-width: 1080px) {
-  .vinyl-bundle-panel,
-  .vinyl-panel-reversed {
+@media (max-width: 1024px) {
+  .speaker-banner-card {
     grid-template-columns: 1fr;
+    padding: clamp(36px, 5vw, 48px) clamp(24px, 4vw, 36px);
     gap: 36px;
   }
 
-  .vinyl-panel-reversed .vinyl-media-col {
-    order: -1;
+  .speaker-banner-content {
+    align-items: flex-start;
   }
 }
 
-@media (max-width: 768px) {
-  .btn-vinyl-outline {
+@media (max-width: 640px) {
+  .speaker-banner-actions {
+    width: 100%;
+  }
+
+  .btn-speaker-primary {
     width: 100%;
     justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .speaker-floating-badge {
+    font-size: 0.65rem;
+    padding: 6px 10px;
   }
 }
+
 
 /* ==========================================================================
    SECTION: DENON & POLK COLLABORATION (A MATCH MADE IN AUDIO HEAVEN)
@@ -3705,6 +3320,7 @@ button {
   background-color: #000000;
   color: #ffffff;
   padding: clamp(80px, 9vw, 140px) 0 clamp(90px, 11vw, 150px);
+  margin-bottom: clamp(48px, 6vw, 84px);
   position: relative;
   overflow: hidden;
 }
@@ -3774,9 +3390,9 @@ button {
 /* Main Two-Column Stage */
 .heaven-main-grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: auto 1fr;
   align-items: center;
-  gap: clamp(40px, 6vw, 90px);
+  gap: clamp(32px, 4.5vw, 68px);
 }
 
 /* Left Column: 3 Capsule Portals (Triptych) */
@@ -3869,7 +3485,8 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 520px;
+  max-width: 690px;
+  width: 100%;
 }
 
 .heaven-title {
@@ -3888,6 +3505,56 @@ button {
   color: #d1d5db;
   margin: 0;
   letter-spacing: 0.005em;
+}
+
+/* Guarantee Pillars in Heaven Section */
+.denon-polk-heaven-section .guarantee-pillars-grid {
+  margin-top: clamp(26px, 3.2vw, 38px);
+  gap: clamp(8px, 1.1vw, 14px);
+  width: 100%;
+}
+
+.denon-polk-heaven-section .guarantee-pillar-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: clamp(14px, 1.2vw, 18px) clamp(10px, 1vw, 14px);
+  gap: 8px;
+  text-align: left;
+  min-width: 0;
+}
+
+.denon-polk-heaven-section .pillar-icon-chip {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+}
+
+.denon-polk-heaven-section .pillar-icon-chip svg {
+  width: 18px;
+  height: 18px;
+}
+
+.denon-polk-heaven-section .pillar-card-content {
+  min-width: 0;
+  width: 100%;
+}
+
+.denon-polk-heaven-section .pillar-title {
+  font-size: clamp(0.78rem, 0.9vw, 0.92rem);
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.denon-polk-heaven-section .pillar-text {
+  font-size: clamp(0.74rem, 0.82vw, 0.83rem);
+  color: #64748b;
+  line-height: 1.45;
 }
 
 /* Responsive Breakpoints */
@@ -3929,398 +3596,6 @@ button {
   }
 }
 
-/* ==========================================================================
-   SECTION 8: OUR FAVORITE POLK PRODUCTS (SWIPER SLIDER)
-   ========================================================================== */
-.polk-favorites-section {
-  background-color: #f1f3f5;
-  color: #111827;
-  padding: clamp(70px, 8vw, 110px) 0 clamp(80px, 9vw, 120px);
-  position: relative;
-  overflow: hidden;
-  font-family: inherit;
-}
-
-.polk-favorites-container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 clamp(16px, 3vw, 40px);
-  box-sizing: border-box;
-}
-
-/* Section Header (Title & Subtitle) */
-.polk-favorites-header {
-  text-align: center;
-  margin-bottom: clamp(36px, 5vw, 56px);
-}
-
-.polk-favorites-title {
-  font-size: clamp(2rem, 3.2vw, 2.75rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: #111827;
-  margin: 0 0 14px 0;
-  line-height: 1.2;
-}
-
-.polk-favorites-subtitle {
-  font-size: clamp(0.9375rem, 1.05vw, 1.0625rem);
-  font-weight: 400;
-  line-height: 1.62;
-  color: #555e6c;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Carousel Stage Wrapper */
-.polk-slider-wrapper {
-  display: flex;
-  align-items: center;
-  position: relative;
-  gap: clamp(8px, 1.6vw, 24px);
-  width: 100%;
-}
-
-/* Flanking Red Chevron Navigation Arrows */
-.polk-nav-arrow {
-  flex-shrink: 0;
-  background: transparent;
-  border: none;
-  color: #ea4a36;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 4px;
-  border-radius: 50%;
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease,
-    color 0.25s ease;
-  z-index: 10;
-  outline: none;
-}
-
-.polk-nav-arrow:hover:not(.swiper-button-disabled) {
-  transform: scale(1.24);
-  color: #d83d2a;
-}
-
-.polk-nav-arrow.swiper-button-disabled {
-  opacity: 0.25;
-  cursor: default;
-  pointer-events: none;
-}
-
-/* Swiper Slider Canvas */
-.polk-favorites-swiper {
-  width: 100%;
-  overflow: hidden;
-  padding: 14px 4px 18px;
-}
-
-.polk-favorites-swiper .swiper-slide {
-  height: auto;
-  display: flex;
-  box-sizing: border-box;
-}
-
-/* Product Card */
-.polk-product-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: clamp(22px, 2.4vw, 32px);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.035);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  box-sizing: border-box;
-  transition:
-    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 0.35s ease;
-}
-
-.polk-product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
-}
-
-/* Card Media Container */
-.polk-card-media {
-  height: clamp(190px, 18vw, 225px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 22px;
-  position: relative;
-}
-
-.polk-product-img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.polk-product-card:hover .polk-product-img {
-  transform: scale(1.05);
-}
-
-/* Card Body */
-.polk-card-body {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.polk-product-name {
-  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
-  font-weight: 700;
-  color: #ea4a36;
-  line-height: 1.35;
-  margin: 0 0 10px 0;
-  min-height: 2.7em;
-}
-
-.polk-product-desc {
-  font-size: clamp(0.8125rem, 0.95vw, 0.875rem);
-  color: #64748b;
-  line-height: 1.5;
-  margin: 0 0 22px 0;
-  min-height: 3em;
-}
-
-.polk-product-price {
-  font-size: clamp(1.0625rem, 1.2vw, 1.1875rem);
-  font-weight: 700;
-  color: #111827;
-  margin-top: auto;
-}
-
-/* Full-Width Bottom Progressbar Track */
-.polk-scrollbar-track {
-  margin-top: clamp(32px, 4vw, 48px);
-  padding: 0 clamp(36px, 4.5vw, 64px);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.polk-favorites-scrollbar.swiper-scrollbar {
-  position: relative !important;
-  left: 0 !important;
-  right: 0 !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  width: 100% !important;
-  height: 4px !important;
-  background: #cbd5e1 !important;
-  border-radius: 9999px !important;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.polk-favorites-scrollbar .swiper-scrollbar-drag {
-  background: #ea4a36 !important;
-  border-radius: 9999px !important;
-  height: 100% !important;
-  transition:
-    transform 0.2s ease,
-    width 0.2s ease;
-}
-
-/* Responsive Breakpoints */
-@media (max-width: 768px) {
-  .polk-slider-wrapper {
-    gap: 4px;
-  }
-
-  .polk-nav-arrow {
-    padding: 4px;
-  }
-
-  .polk-nav-arrow svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .polk-scrollbar-track {
-    padding: 0 16px;
-  }
-}
-
-/* ==========================================================================
-   SECTION 9: DENON LIFESTYLE MOSAIC GALLERY
-   ========================================================================== */
-.denon-lifestyle-mosaic-section {
-  background-color: #ffffff;
-  padding: clamp(32px, 4.5vw, 64px) 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.lifestyle-mosaic-container {
-  max-width: 1540px;
-  margin: 0 auto;
-  padding: 0 clamp(12px, 2.5vw, 36px);
-  box-sizing: border-box;
-}
-
-/* 4-Column Asymmetric Photographic Collage Grid */
-.lifestyle-mosaic-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 1.15fr 1fr 1.1fr;
-  grid-template-rows: 1.18fr 1fr;
-  gap: clamp(8px, 1.2vw, 16px);
-  height: clamp(520px, 56vw, 780px);
-  width: 100%;
-}
-
-/* Individual Tile Placement */
-.mosaic-tile {
-  position: relative;
-  overflow: hidden;
-  background-color: #111216;
-  border-radius: 2px;
-  cursor: pointer;
-}
-
-/* Tile 1: Far Left Tall */
-.tile-left-tall {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-}
-
-/* Tile 2: Center Top Wide */
-.tile-center-top {
-  grid-column: 2 / span 2;
-  grid-row: 1;
-}
-
-/* Tile 3: Center Bottom Left */
-.tile-center-bottom-left {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-/* Tile 4: Center Bottom Right */
-.tile-center-bottom-right {
-  grid-column: 3;
-  grid-row: 2;
-}
-
-/* Tile 5: Far Right Tall */
-.tile-right-tall {
-  grid-column: 4;
-  grid-row: 1 / span 2;
-}
-
-/* High-Resolution Media */
-.mosaic-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.mosaic-tile:hover .mosaic-img {
-  transform: scale(1.045);
-}
-
-/* Subtle Interactive Vignette & Caption */
-.mosaic-hover-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, transparent 40%);
-  opacity: 0;
-  display: flex;
-  align-items: flex-end;
-  padding: clamp(14px, 2vw, 24px);
-  transition: opacity 0.35s ease;
-  pointer-events: none;
-}
-
-.mosaic-tile:hover .mosaic-hover-overlay {
-  opacity: 1;
-}
-
-.mosaic-caption {
-  color: #ffffff;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-  transform: translateY(4px);
-  transition: transform 0.35s ease;
-}
-
-.mosaic-tile:hover .mosaic-caption {
-  transform: translateY(0);
-}
-
-/* Responsive Breakpoints */
-@media (max-width: 1080px) and (min-width: 601px) {
-  .lifestyle-mosaic-grid {
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "left right"
-      "center-top center-top"
-      "bottom-left bottom-right";
-    gap: clamp(8px, 1.4vw, 14px);
-  }
-
-  .tile-left-tall {
-    grid-area: left;
-    aspect-ratio: 3 / 4;
-  }
-
-  .tile-right-tall {
-    grid-area: right;
-    aspect-ratio: 3 / 4;
-  }
-
-  .tile-center-top {
-    grid-area: center-top;
-    aspect-ratio: 16 / 9;
-  }
-
-  .tile-center-bottom-left {
-    grid-area: bottom-left;
-    aspect-ratio: 4 / 3;
-  }
-
-  .tile-center-bottom-right {
-    grid-area: bottom-right;
-    aspect-ratio: 4 / 3;
-  }
-}
-
-@media (max-width: 600px) {
-  .lifestyle-mosaic-grid {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    gap: 10px;
-  }
-
-  .tile-left-tall,
-  .tile-right-tall,
-  .tile-center-bottom-left,
-  .tile-center-bottom-right {
-    aspect-ratio: 4 / 3;
-    width: 100%;
-  }
-
-  .tile-center-top {
-    aspect-ratio: 16 / 9;
-    width: 100%;
-  }
-}
 
 /* ==========================================================================
    SITE FOOTER REDESIGN (DESKTOP & MOBILE ACCORDION)
